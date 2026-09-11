@@ -740,13 +740,13 @@ export default function Home() {
       <section className="section" id="booth">
         <div className="container">
           <h2 className="section-title">The <span className="text-glow-gold">Forgiveness Booth</span></h2>
-          <p className="section-subtitle">Chat with the High Priest of Virtue to confess your sins or discuss your journey.</p>
+          <p className="section-subtitle">Interactive Conversational Agent powered by an in-house deterministic NLP engine &amp; live crypto oracles.</p>
           
           <div className="glass-card booth-card">
             <div className="chat-header-actions">
               <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
                 <span style={{ fontSize: "0.95rem", color: "var(--text-secondary)", fontWeight: 600 }}>
-                  Status: <span style={{ color: "#00ba7c" }}>Online</span>
+                  Status: <span style={{ color: "#00ba7c" }}>Online (Custom NLP Agent)</span>
                 </span>
                 <button 
                   onClick={() => sendDirectCommand("/help")}
