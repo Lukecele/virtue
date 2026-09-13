@@ -74,16 +74,16 @@ export default function Home() {
   const dailyVolumeBnb = bnbPrice > 0 ? dailyVolumeUsd / bnbPrice : 0;
 
   const handleCopySummary = () => {
-    const text = `$VIRTUE Dividend Projections:\n💰 Holdings: ${holdingsTokens.toLocaleString()} $VIRTUE (${holdingsPercent}% of supply)\n📊 Daily Volume: $${dailyVolumeUsd.toLocaleString()} USD (${dailyVolumeBnb.toFixed(1)} BNB)\n💵 Daily Rewards: +${dailyRewardsUserBnb.toFixed(4)} WBNB/BNB (~$${dailyRewardsUserUsd.toFixed(2)} USD)\n📈 Yearly Rewards: +${yearlyRewardsUserBnb.toFixed(2)} WBNB/BNB (~$${yearlyRewardsUserUsd.toFixed(0)} USD)\n⚡ Payout: Auto WBNB above $4 / Choice of WBNB or BNB on Flap Tax Info page\n🔗 Calculate yours: https://virtue-ecru.vercel.app/#calculator`;
+    const text = `$VIRTUE Reflection Projections:\n💰 Holdings: ${holdingsTokens.toLocaleString()} $VIRTUE (${holdingsPercent}% of supply)\n📊 Daily Volume: $${dailyVolumeUsd.toLocaleString()} USD (${dailyVolumeBnb.toFixed(1)} BNB)\n💵 Daily Rewards: +${dailyRewardsUserBnb.toFixed(4)} WBNB/BNB (~$${dailyRewardsUserUsd.toFixed(2)} USD)\n📈 Yearly Rewards: +${yearlyRewardsUserBnb.toFixed(2)} WBNB/BNB (~$${yearlyRewardsUserUsd.toFixed(0)} USD)\n⚡ Payout: Auto WBNB above $4 / Choice of WBNB or BNB on Flap Tax Info page\n🔗 Calculate yours: https://virtue-ecru.vercel.app/#calculator`;
     navigator.clipboard.writeText(text);
     setCopiedSummary(true);
     setTimeout(() => setCopiedSummary(false), 2000);
   };
 
   // Tokenomics parameters
-  const dividendTaxRate = 0.03; // 3% buy/sell fee distributed 100% as BNB/WBNB dividends
+  const dividendTaxRate = 0.03; // 3% buy/sell fee distributed 100% as BNB/WBNB reflections
 
-  // Dividend Calculations
+  // Reflection Calculations
   const calculatedHoldingsTokens = holdingsTokens;
   const userPoolShare = holdingsTokens / totalMaxSupply;
   
@@ -229,7 +229,7 @@ export default function Home() {
             <a href="#about" className="nav-link">About</a>
             <a href="#lore" className="nav-link">Lore</a>
             <a href="#tokenomics" className="nav-link">Tokenomics</a>
-            <a href="#calculator" className="nav-link">Dividend Calc</a>
+            <a href="#calculator" className="nav-link">Reflection Calc</a>
             <a href="#booth" className="nav-link">Forgiveness Booth</a>
           </nav>
 
@@ -264,7 +264,7 @@ export default function Home() {
             <a href="#about" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>About</a>
             <a href="#lore" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Lore</a>
             <a href="#tokenomics" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Tokenomics</a>
-            <a href="#calculator" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Dividend Calc</a>
+            <a href="#calculator" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Reflection Calc</a>
             <a href="#booth" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Forgiveness Booth</a>
             
             <a 
@@ -298,7 +298,7 @@ export default function Home() {
             <p className="hero-description">
               Inspired by CZ’s iconic tweet, <strong>$VIRTUE</strong> is the ultimate community-driven token on BNB Chain. 
               In a space filled with FUD, betrayal, and paper hands, we stand for the rarest quality in crypto: the ability 
-              to forgive, buy the dip, and keep building. We do not cancel. We forgive... and we collect 100% BNB dividends.
+              to forgive, buy the dip, and keep building. We do not cancel. We forgive... and we collect 100% BNB reflections.
             </p>
             
             <div className="hero-actions">
@@ -327,7 +327,7 @@ export default function Home() {
               </div>
               <div className="stat-item">
                 <h4>100%</h4>
-                <p>Dividends in BNB</p>
+                <p>Reflections in BNB</p>
               </div>
               <div className="stat-item">
                 <h4>1B</h4>
@@ -429,14 +429,14 @@ export default function Home() {
               <h3>Buy & Sell Fees</h3>
               <p>
                 A minimal 3% fee is applied to every buy and sell transaction. 
-                This low-fee structure ensures healthy trading volume while feeding our dividend pool.
+                This low-fee structure ensures healthy trading volume while feeding our reflection pool.
               </p>
             </div>
 
             {/* Card 2 */}
             <div className="glass-card tok-card">
               <div className="tok-icon-wrapper" style={{ color: "var(--accent-purple)", borderColor: "rgba(157, 78, 221, 0.15)" }}>100%</div>
-              <h3>BNB & WBNB Dividends</h3>
+              <h3>BNB & WBNB Reflections</h3>
               <p style={{ color: "var(--text-secondary)", lineHeight: "1.6" }}>
                 100% of transaction fees are converted to rewards for holders with at least <strong>10,000 $VIRTUE</strong>. 
                 Daily rewards over <strong>$4</strong> are auto-distributed in <strong>WBNB</strong>. Below $4, claim manually anytime 
@@ -467,7 +467,7 @@ export default function Home() {
 
           {/* Quick Rules Banner */}
           <div style={{ marginTop: "24px", padding: "16px 20px", borderRadius: "14px", background: "rgba(243, 186, 47, 0.05)", border: "1px dashed rgba(243, 186, 47, 0.25)", textAlign: "center", fontSize: "0.9rem", color: "var(--text-secondary)" }}>
-            ⚡ <strong>Dividend Mechanics:</strong> Minimum holding: <strong>10,000 $VIRTUE</strong> (0.001%) • Auto-payouts: <strong>WBNB</strong> ($4+ threshold) • Manual claims: Choice of <strong>WBNB or BNB</strong> on <a href="https://flap.sh/bnb/0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777/taxinfo?lang=en" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent-gold)", textDecoration: "underline" }}>Flap Tax Info page</a>.
+            ⚡ <strong>Reflection Mechanics:</strong> Minimum holding: <strong>10,000 $VIRTUE</strong> (0.001%) • Auto-payouts: <strong>WBNB</strong> ($4+ threshold) • Manual claims: Choice of <strong>WBNB or BNB</strong> on <a href="https://flap.sh/bnb/0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777/taxinfo?lang=en" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent-gold)", textDecoration: "underline" }}>Flap Tax Info page</a>.
           </div>
 
           {/* Real Contract Address Display */}
@@ -506,7 +506,7 @@ export default function Home() {
               className="btn-secondary"
               style={{ fontSize: "0.85rem", padding: "8px 16px", display: "inline-flex", alignItems: "center", gap: "6px", borderColor: "rgba(243, 186, 47, 0.4)", color: "var(--accent-gold)" }}
             >
-              💰 Claim Dividends (Flap Tax Info)
+              💰 Claim Reflections (Flap Tax Info)
             </a>
             <a 
               href="https://bscscan.com/token/0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777" 
@@ -530,10 +530,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Interactive Dividend Calculator */}
+      {/* Interactive Reflection Calculator */}
       <section className="section" id="calculator" style={{ background: "rgba(255, 255, 255, 0.01)" }}>
         <div className="container">
-          <h2 className="section-title">BNB Dividend <span className="text-glow-gold">Calculator</span></h2>
+          <h2 className="section-title">BNB Reflection <span className="text-glow-gold">Calculator</span></h2>
           <p className="section-subtitle">Calculate real distributions based on contract specifications & live market feeds.</p>
           
           <div className="glass-card calc-card">
@@ -683,7 +683,7 @@ export default function Home() {
 
               {/* Calculator Results */}
               <div className="calc-results">
-                <span className="result-title">Real Dividends Output</span>
+                <span className="result-title">Real Reflections Output</span>
                 
                 <div style={{ margin: "10px 0" }}>
                   <div className="result-value-bnb">+{dailyRewardsUserBnb.toFixed(4)} WBNB / BNB</div>
@@ -704,7 +704,7 @@ export default function Home() {
                 <div className="result-divider"></div>
                 
                 <div className="result-meta-item">
-                  <span className="result-meta-label">Monthly Dividends</span>
+                  <span className="result-meta-label">Monthly Reflections</span>
                   <span className="result-meta-value text-glow-gold">
                     +{monthlyRewardsUserBnb.toFixed(2)} BNB (${monthlyRewardsUserUsd.toFixed(0)})
                   </span>
@@ -728,7 +728,7 @@ export default function Home() {
                   className="calc-share-btn"
                   type="button"
                 >
-                  {copiedSummary ? "✓ Projections Copied!" : "📋 Copy Dividend Summary"}
+                  {copiedSummary ? "✓ Projections Copied!" : "📋 Copy Reflection Summary"}
                 </button>
               </div>
             </div>
@@ -879,7 +879,7 @@ export default function Home() {
                   { label: "📜 /help", cmd: "/help" },
                   { label: "💡 Improve Model", action: openImproveModelTweet },
                   { label: "📋 Contract", cmd: "ca" },
-                  { label: "💰 Dividends", cmd: "how do dividends work?" },
+                  { label: "💰 Reflections", cmd: "how do reflections work?" },
                   { label: "4️⃣ Rule 4", cmd: "4" },
                   { label: "📊 BNB Price", cmd: "bnb price" },
                   { label: "📊 BTC Price", cmd: "btc price" },
@@ -1028,14 +1028,14 @@ export default function Home() {
               {[
                 {
                   title: "📢 Official Promo",
-                  text: `Earn passive 3% BNB dividends on BSC with $VIRTUE! 💎\n\nInspired by @cz_binance: "Forgiveness is a virtue!" 🙏\n\nLocked Liquidity • Fair Launch on Flap.sh\nCA: ${contractAddress}\nSwap: ${launchpadUrl}`
+                  text: `Earn continuous 3% BNB reflections on BSC with $VIRTUE! 💎\n\nInspired by @cz_binance: "Forgiveness is a virtue!" 🙏\n\nLocked Liquidity • Fair Launch on Flap.sh\nCA: ${contractAddress}\nSwap: ${launchpadUrl}`
                 },
                 {
                   title: "🕊️ Lore & Absolution",
-                  text: `Confessed my worst crypto trades at the $VIRTUE Forgiveness Booth! 🙏\n\nWhen paper hands sell, we forgive the dip and collect 3% BNB dividends.\n\nCA: ${contractAddress}\nFlap: ${launchpadUrl}`
+                  text: `Confessed my worst crypto trades at the $VIRTUE Forgiveness Booth! 🙏\n\nWhen paper hands sell, we forgive the dip and collect 3% BNB reflections.\n\nCA: ${contractAddress}\nFlap: ${launchpadUrl}`
                 },
                 {
-                  title: "💰 Dividend Income",
+                  title: "💰 Reflection Rewards",
                   text: `Why hold plain tokens when you can earn passive BNB? $VIRTUE distributes 100% of 3% tax back to holders! 🚀\n\nCheck projections & swap on Flap.sh:\nCA: ${contractAddress}\n${launchpadUrl}`
                 },
                 {

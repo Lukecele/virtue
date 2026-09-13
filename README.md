@@ -16,7 +16,7 @@ Unlike standard thin wrappers around paid LLM APIs, Virtue features an **in-hous
 ### Why Custom Deterministic NLP?
 - **Zero Ongoing Token Costs:** 100% self-hosted conversational logic with zero external API bills.
 - **Ultra-Low Latency (<15ms):** Runs instantly at the edge without third-party API network overhead or queuing.
-- **Zero Mathematical Hallucinations:** Guarantees absolute accuracy on financial calculations, contract logic, and dividend rules.
+- **Zero Mathematical Hallucinations:** Guarantees absolute accuracy on mathematical calculations, contract logic, and reflection fee distribution rules.
 - **Complete Privacy & Resilience:** Operates without rate limits, cold starts, or third-party platform dependencies.
 
 ---

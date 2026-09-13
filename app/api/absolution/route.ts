@@ -40,19 +40,19 @@ function getLanguageWarning(cleanText: string): { reply: string; penance: string
   const trWords = ["merhaba","nasil","nasıl","satin","alirim","kimsin","proje","kontrat","adres","vergi","temettu","gunah","sattim","kaybettim","kaldirac","tasfiye","rahip","nerede","tesekkur","teşekkür"];
   if (trWords.some(w => new RegExp(`\\b${w}\\b`, "i").test(cleanText))) return { reply: "I only commune in English, the universal tongue of the blockchain. Please translate your confession to English, traveler. / Ben sadece blok zincirinin evrensel dili olan İngilizce olarak iletişim kuruyorum. Lütfen günah çıkartma metninizi İngilizceye çevirin, gezgin.", penance: "" };
 
-  const ptWords = ["quem","projeto","porque","contrato","endereco","imposto","dividendos","pecado","vendido","perdido","sacerdote","onde","meu","tua","teu","obrigado"];
+  const ptWords = ["quem","projeto","porque","contrato","endereco","imposto","dividendos","reflexoes","pecado","vendido","perdido","sacerdote","onde","meu","tua","teu","obrigado"];
   if (ptWords.some(w => new RegExp(`\\b${w}\\b`, "i").test(cleanText))) return { reply: "I only commune in English, the universal tongue of the blockchain. Please translate your confession to English, traveler. / Eu só me comunico em inglês, a língua universal da blockchain. Por favor, traduza a sua confissão para inglês, viajante.", penance: "" };
 
-  const deWords = ["hallo","kaufen","wer","bist","vertrag","adresse","dividenden","steuer","verkauft","verloren","geld","hebel","liquidiert","priester","danke"];
+  const deWords = ["hallo","kaufen","wer","bist","vertrag","adresse","dividenden","reflexionen","steuer","verkauft","verloren","geld","hebel","liquidiert","priester","danke"];
   if (deWords.some(w => new RegExp(`\\b${w}\\b`, "i").test(cleanText))) return { reply: "I only commune in English, the universal tongue of the blockchain. Please translate your confession to English, traveler. / Ich kommuniziere nur auf Englisch, der universellen Sprache der Blockchain. Bitte übersetze deine Beichte ins Englische, Reisender.", penance: "" };
 
-  const itWords = ["ciao","salve","buongiorno","buonasera","comprare","compra","chi","sei","cosa","progetto","perche","perché","contratto","indirizzo","tassa","dividendi","peccato","venduto","panico","perso","soldi","liquidato","prete","sacerdote","dove","miei","mio","tuoi","mia","questo","consigli","grazie"];
+  const itWords = ["ciao","salve","buongiorno","buonasera","comprare","compra","chi","sei","cosa","progetto","perche","perché","contratto","indirizzo","tassa","dividendi","riflessioni","peccato","venduto","panico","perso","soldi","liquidato","prete","sacerdote","dove","miei","mio","tuoi","mia","questo","consigli","grazie"];
   if (itWords.some(w => new RegExp(`\\b${w}\\b`, "i").test(cleanText))) return { reply: "I only commune in English, the universal tongue of the blockchain. Please translate your confession to English, traveler. / Comunico solo in inglese, la lingua universale della blockchain. Per favore, traduci la tua confessione in inglese, viaggiatore.", penance: "" };
 
-  const esWords = ["hola","comprar","quien","eres","proyecto","porque","contrato","direccion","impuesto","dividendos","pecado","vendido","perdido","sacerdote","donde","mis","tuyo","tuya","consejos","gracias"];
+  const esWords = ["hola","comprar","quien","eres","proyecto","porque","contrato","direccion","impuesto","dividendos","reflexoes","pecado","vendido","perdido","sacerdote","donde","mis","tuyo","tuya","consejos","gracias"];
   if (esWords.some(w => new RegExp(`\\b${w}\\b`, "i").test(cleanText))) return { reply: "I only commune in English, the universal tongue of the blockchain. Please translate your confession to English, traveler. / Solo me comunico en inglés, la lengua universal de la blockchain. Por favor, traduce tu confesión al inglés, viajero.", penance: "" };
 
-  const frWords = ["bonjour","salut","acheter","pourquoi","contrat","adresse","taxe","dividendes","vendu","panique","perdu","argent","pretre","conseils","merci","combien","coute","comment"];
+  const frWords = ["bonjour","salut","acheter","pourquoi","contrat","adresse","taxe","dividendes","reflexions","vendu","panique","perdu","argent","pretre","conseils","merci","combien","coute","comment"];
   if (frWords.some(w => new RegExp(`\\b${w}\\b`, "i").test(cleanText))) return { reply: "I only commune in English, the universal tongue of the blockchain. Please translate your confession to English, traveler. / Je ne communique qu'en anglais, la langue universelle de la blockchain. Veuillez traduire votre confession en anglais, voyageur.", penance: "" };
 
   return null;
@@ -92,7 +92,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(dex|dexscreener|ave|ave\.ai|dextools|gecko|wen dex|when dex|dex paid|pay ave|pay dex|when ave|update dex|dexscreener update|update dexscreener|dexscreener paid|ave paid|dextools paid|when dexscreener|update ave)\b/i,
     replies: [
-      "Regarding DexScreener, Ave.ai, and DEX info updates: as $VIRTUE gains momentum and trading volume, the developer and the community will ensure DexScreener and Ave.ai profiles are updated and fast-tracked! Focus on holding spot, spreading the lore, and collecting your 3% BNB dividends as volume grows. 📊",
+      "Regarding DexScreener, Ave.ai, and DEX info updates: as $VIRTUE gains momentum and trading volume, the developer and the community will ensure DexScreener and Ave.ai profiles are updated and fast-tracked! Focus on holding spot, spreading the lore, and collecting your 3% BNB reflections as volume grows. 📊",
       "When DEX / Ave update? As volume and community growth build up, the dev or community will handle DexScreener fast-track and Ave.ai updates organic to the project's success. Hold spot $VIRTUE and let the 3% BNB tax build real value!"
     ],
     penance: "Hold spot $VIRTUE and let volume grow organically."
@@ -105,12 +105,12 @@ const elizaRules: ElizaRule[] = [
       `📜 HIGH PRIEST OF VIRTUE — ORACLE CAPABILITIES MENU 📜\n\n` +
       `1️⃣ CONFESS SINS: Type trading regrets ("I panic sold", "liquidated on 50x", "rugged") for divine absolution & penance.\n\n` +
       `2️⃣ STEP-BY-STEP BUYING GUIDE: Ask "how to buy" or "buying guide" for complete Web3 wallet setup & DEX swapping on Flap.sh.\n\n` +
-      `3️⃣ TOKENOMICS & DIVIDENDS: Ask about "dividends", "min holding" (10k tokens), "tax" (3% BNB), "supply" (1B fixed), or "claim rewards".\n\n` +
+      `3️⃣ TOKENOMICS & REFLECTIONS: Ask about "reflections", "min holding" (10k tokens), "tax" (3% BNB), "supply" (1B fixed), or "claim rewards".\n\n` +
       `4️⃣ CONTRACT & SAFETY AUDIT: Ask for "ca", "dev wallet" ($40–$60 buy), "proxy contract", "bonding curve", "lp burn", or "bundle / multiwallet" checks.\n\n` +
       `5️⃣ LIVE MARKET FEED: Ask for live crypto quotes ("btc price", "bnb price", "sol price") powered by live Binance API.\n\n` +
       `6️⃣ LIVE LINK & TWEET INSPECTION: Paste any X/Twitter URL or web link directly into the chat for real-time analysis.\n\n` +
       `7️⃣ CZ LORE & PHILOSOPHY: Type "4", "cz tweet", "safu", "buidl", or ask about "shitcoin vs utility".\n\n` +
-      `8️⃣ CALCULATOR & MODEL IMPROVEMENT: Use the Dividend Calculator (/#calculator) or click "💡 Improve Model" to post suggestions on X!\n\n` +
+      `8️⃣ CALCULATOR & MODEL IMPROVEMENT: Use the Reflection Calculator (/#calculator) or click "💡 Improve Model" to post suggestions on X!\n\n` +
       `What would you like to explore today, traveler? 🙏`
     ],
     penance: "Explore the features and hold spot $VIRTUE."
@@ -125,8 +125,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(i lost all|i losed all|lost all my|lost everything|losed everything|lost it all|losed all|i lost my money|i losed my money|lost all|losed all|lost my savings|losed my savings|losed|loosed|losted)\b/i,
     replies: [
-      "Losing everything in crypto is a crushing weight, traveler. Whether to leverage, rugs, or market volatility, the High Priest offers absolution. $VIRTUE was created to break the cycle of predatory trading — no leverage, no dev dumps, just 3% BNB dividends paid directly to holders from all volume. Take a breath, forgive your past trades, and let spot holdings rebuild your peace. 🙏",
-      "You mentioned having lost in your trading journey. Speak freely, traveler — what exact trade or token caused this? The High Priest is here to offer absolution and guide you back to $VIRTUE's 3% BNB dividends. 🙏"
+      "Losing everything in crypto is a crushing weight, traveler. Whether to leverage, rugs, or market volatility, the High Priest offers absolution. $VIRTUE was created to break the cycle of predatory trading — no leverage, no dev dumps, just 3% BNB reflections paid directly to holders from all volume. Take a breath, forgive your past trades, and let spot holdings rebuild your peace. 🙏",
+      "You mentioned having lost in your trading journey. Speak freely, traveler — what exact trade or token caused this? The High Priest is here to offer absolution and guide you back to $VIRTUE's 3% BNB reflections. 🙏"
     ],
     penance: "Forgive your past losses and focus on spot holding."
   },
@@ -145,7 +145,7 @@ const elizaRules: ElizaRule[] = [
 
   // 2. CLAIM / WITHDRAW / PAYOUT REWARDS / FREQUENCY
   {
-    pattern: /\b(claim|how to claim|claim bnb|withdraw|withdraw bnb|withdraw dividend|where claim|how to withdraw|withdrawing rewards|claim portal|how frequently|how frequent|how often|when paid|reward frequency|dividend frequency)\b/i,
+    pattern: /\b(claim|how to claim|claim bnb|withdraw|withdraw bnb|withdraw dividend|withdraw reflection|where claim|how to withdraw|withdrawing rewards|claim portal|how frequently|how frequent|how often|when paid|reward frequency|dividend frequency|reflection frequency)\b/i,
     replies: [
       `To claim or withdraw your BNB rewards: automatic distribution fires when your accumulated yield reaches $4. Below $4, you can claim manually anytime on the official Flap.sh Tax Info page: ${claimUrl}. Auto payouts send WBNB, while manual claims allow choosing between WBNB and BNB. 💰`,
       `BNB rewards accumulate continuously on every single trade — no weekly or monthly schedule. Automatic payouts trigger at $4+, or claim manually below $4 on Flap.sh. Minimum holding threshold: 10,000 $VIRTUE.`
@@ -153,14 +153,14 @@ const elizaRules: ElizaRule[] = [
     penance: "Check your accumulated BNB rewards on Flap."
   },
 
-  // 3. MINIMUM HOLDING FOR DIVIDENDS
+  // 3. MINIMUM HOLDING FOR REFLECTIONS
   {
-    pattern: /\b(minimum tokens|minimum holding|min invest|how many tokens to get dividends|min holding for rewards|10k tokens|10000 virtue|min tokens|least amount to hold|minimum amount|min holding|minimum.*hold|min.*token|min.*tokens)\b/i,
+    pattern: /\b(minimum tokens|minimum holding|min invest|how many tokens to get dividends|how many tokens to get reflections|min holding for rewards|10k tokens|10000 virtue|min tokens|least amount to hold|minimum amount|min holding|minimum.*hold|min.*token|min.*tokens)\b/i,
     replies: [
-      "To qualify for continuous BNB dividends, you must hold at least 10,000 $VIRTUE tokens (0.001% of supply). Holders with 10k+ $VIRTUE earn 3% dividends from every trade. Rewards auto-distribute in WBNB at the $4 threshold, while manual claims on Flap Tax Info page let you choose between WBNB and BNB.",
-      "The minimum holding requirement for dividend eligibility is 10,000 $VIRTUE tokens. Holding 10k+ tokens grants you access to the 3% tax pool. Automatic payouts send WBNB directly to your wallet ($4+ threshold), while manual claims on Flap allow choosing WBNB or BNB."
+      "To qualify for continuous BNB reflections, you must hold at least 10,000 $VIRTUE tokens (0.001% of supply). Holders with 10k+ $VIRTUE earn 3% fee reflections from every trade. Rewards auto-distribute in WBNB at the $4 threshold, while manual claims on Flap Tax Info page let you choose between WBNB and BNB.",
+      "The minimum holding requirement for reflection eligibility is 10,000 $VIRTUE tokens. Holding 10k+ tokens grants you access to the 3% tax pool. Automatic payouts send WBNB directly to your wallet ($4+ threshold), while manual claims on Flap allow choosing WBNB or BNB."
     ],
-    penance: "Acquire at least 10,000 $VIRTUE to enter the dividend pool."
+    penance: "Acquire at least 10,000 $VIRTUE to enter the reflection pool."
   },
 
   // 4. SLIPPAGE & GAS FEES
@@ -182,9 +182,9 @@ const elizaRules: ElizaRule[] = [
       `🔹 STEP 2 — FUND WALLET WITH BNB:\nAcquire BNB on Binance or any CEX and withdraw it to your wallet address via BNB Smart Chain (BEP-20).\n\n` +
       `🔹 STEP 3 — CONNECT TO FLAP.SH:\nOpen the dApp browser in your wallet or visit ${launchpadUrl} and click 'Connect Wallet'.\n\n` +
       `🔹 STEP 4 — SET 5% SLIPPAGE & SWAP:\nEnter your BNB amount, set slippage to 5% (covers the 3% tax + network gas buffer), and swap BNB for $VIRTUE.\n\n` +
-      `🔹 STEP 5 — HOLD 10,000+ $VIRTUE & EARN BNB DIVIDENDS:\nHold at least 10,000 $VIRTUE tokens! 3% BNB dividends from every trade are distributed directly to your wallet automatically ($4+ threshold) or claimable manually anytime on Flap.sh! 💎⚡`,
+      `🔹 STEP 5 — HOLD 10,000+ $VIRTUE & EARN BNB REFLECTIONS:\nHold at least 10,000 $VIRTUE tokens! 3% BNB reflections from every trade are distributed directly to your wallet automatically ($4+ threshold) or claimable manually anytime on Flap.sh! 💎⚡`,
 
-      `Simple DEX Buy Guide:\n1️⃣ Install MetaMask or Trust Wallet & load BNB (BEP-20).\n2️⃣ Visit ${launchpadUrl} and connect your wallet.\n3️⃣ Swap BNB for $VIRTUE with 5% slippage.\n4️⃣ Hold 10k+ $VIRTUE to collect continuous 3% BNB dividends!`
+      `Simple DEX Buy Guide:\n1️⃣ Install MetaMask or Trust Wallet & load BNB (BEP-20).\n2️⃣ Visit ${launchpadUrl} and connect your wallet.\n3️⃣ Swap BNB for $VIRTUE with 5% slippage.\n4️⃣ Hold 10k+ $VIRTUE to collect continuous 3% BNB reflections!`
     ],
     penance: "Follow the 5-step buying guide on Flap.sh."
   },
@@ -196,7 +196,7 @@ const elizaRules: ElizaRule[] = [
       `You can sell $VIRTUE on Flap.sh (${launchpadUrl}) by swapping back to BNB with 5% slippage. Note: a 3% sell tax is collected and distributed to remaining holders — so your sell rewards the diamond hands! 🔄`,
       "To exit or sell, swap $VIRTUE back to BNB on Flap.sh. Every sell generates 3% BNB tax that flows directly to remaining holders."
     ],
-    penance: "Consider holding longer to collect continuous BNB dividends."
+    penance: "Consider holding longer to collect continuous BNB reflections."
   },
 
   // 7. TECH HELP / WALLET IMPORT / CUSTOM TOKEN
@@ -204,7 +204,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(how to add virtue to metamask|import token|custom token|not showing in wallet|multiple wallets|can i use two wallets|reset nonce|tx stuck|tx failed|my transaction is stuck)\b/i,
     replies: [
       `To add $VIRTUE to MetaMask: 1) Open MetaMask and go to 'Import Tokens'. 2) Paste the contract address: 0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777. 3) Symbol ($VIRTUE) auto-fills. 4) Click 'Add Custom Token'. Your balance appears immediately. For stuck TXs: increase gas or use MetaMask 'Reset Account'.`,
-      `In Trust Wallet: tap settings → 'Manage Crypto' → paste CA: 0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777. For multiple wallets: each wallet holding $VIRTUE independently earns its own 3% BNB dividends.`
+      `In Trust Wallet: tap settings → 'Manage Crypto' → paste CA: 0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777. For multiple wallets: each wallet holding $VIRTUE independently earns its own 3% BNB reflections.`
     ],
     penance: "Import the contract address into your wallet."
   },
@@ -213,7 +213,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b((cause|because|due to|by|from)\s+(of\s+)?scammers?|scammers?\s+(took|stole|drained|ruined|got me)|(got|was|been)\s+scammed|lost.*scammers?|scammed by|scammers?|scammer took|scammer stole|fake dev scam)\b/i,
     replies: [
-      "Falling victim to malicious scammers or rug pulls is a deep wound in Web3. The High Priest hears your pain and offers absolution. $VIRTUE was built precisely as a sanctuary from predatory scammers: 100% locked liquidity on Flap.sh, no dev minting, zero insider pre-allocations, and continuous 3% BNB dividends paid directly to honest spot holders. May your wallet recover in peace. 🙏",
+      "Falling victim to malicious scammers or rug pulls is a deep wound in Web3. The High Priest hears your pain and offers absolution. $VIRTUE was built precisely as a sanctuary from predatory scammers: 100% locked liquidity on Flap.sh, no dev minting, zero insider pre-allocations, and continuous 3% BNB reflections paid directly to honest spot holders. May your wallet recover in peace. 🙏",
       "Scammers and fake developers are the plague of crypto. If you lost your funds to bad actors in past trades, know that you are welcomed in the Forgiveness Booth. Here on $VIRTUE, code is law: no dev dumps, no hidden team tax, just immutable 3% BNB rewards flowing to holders. Forgive the past and rebuild with verified spot holdings."
     ],
     penance: "Inspect verified contracts on BscScan and avoid unverified links."
@@ -224,7 +224,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(is it rugproof|rug check|is it rugging|audit|honeypot|is it a scam|is it legit|is it safe|rugpull|rug pull)\b/i,
     replies: [
       `$VIRTUE is 100% legit and transparent. Built on Flap.sh on BSC: 100% locked liquidity, verified contract with no mint function, zero team allocations, and single dev wallet (~$40–$60 buy). 100% of 3% tax is distributed to holders as BNB. Contract: ${contractAddress} 🛡️`,
-      "No scam, no honeypot, no dev drainers. The contract is immutable, liquidity is locked on Flap.sh, and 3% BNB dividends flow automatically on every trade."
+      "No scam, no honeypot, no dev drainers. The contract is immutable, liquidity is locked on Flap.sh, and 3% BNB reflections flow automatically on every trade."
     ],
     penance: "Inspect the contract on BscScan and trade with confidence."
   },
@@ -234,7 +234,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(are you an ai|are you ai|what are you|who made you|who built you|who created you|who coded you|who is behind bot)\b/i,
     replies: [
       "I am the High Priest of Virtue — a confessional oracle built by anonymous, reformed builders on BNB Smart Chain. My logic runs on custom pattern-matching rules and fuzzy sentiment scorers designed to offer absolution, tokenomics guidance, and live market intelligence for $VIRTUE. 🙏",
-      "I am a specialized AI confessional oracle dedicated to $VIRTUE. I was created by the anonymous community developers to serve the Forgiveness Booth, absolve paper-hand sins, and explain the on-chain BNB dividend mechanics."
+      "I am a specialized AI confessional oracle dedicated to $VIRTUE. I was created by the anonymous community developers to serve the Forgiveness Booth, absolve paper-hand sins, and explain the on-chain BNB reflection mechanics."
     ],
     penance: "Explore the Forgiveness Booth and hold spot $VIRTUE."
   },
@@ -243,19 +243,19 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(i'm anxious|im anxious|anxious about|depressed about crypto|depressed in crypto|crypto depression|feel anxious|anxiety|feeling down)\b/i,
     replies: [
-      "Fear and anxiety are normal in volatile crypto markets. The Priest does not dismiss your emotion — but look at the foundation beneath $VIRTUE: 100% locked liquidity, continuous 3% BNB dividends, immutable contract. Focus on real yield, breathe, and let the diamond hands hold. 🙏",
+      "Fear and anxiety are normal in volatile crypto markets. The Priest does not dismiss your emotion — but look at the foundation beneath $VIRTUE: 100% locked liquidity, continuous 3% BNB reflections, immutable contract. Focus on real yield, breathe, and let the diamond hands hold. 🙏",
       "The market tests everyone's nerves. Remember why $VIRTUE was created: CZ's message of resilience and forgiveness. Do not let short-term chart noise ruin your peace of mind. Hold spot and stay SAFU."
     ],
-    penance: "Step away from the chart for an hour and let BNB dividends accumulate."
+    penance: "Step away from the chart for an hour and let BNB reflections accumulate."
   },
 
 
-  // 5. PROXY CONTRACT EXPLANATION (Flap.sh Tax & Dividend Infrastructure)
+  // 5. PROXY CONTRACT EXPLANATION (Flap.sh Tax & Reflection Infrastructure)
   {
     pattern: /\b(proxy|proxy contract|why proxy|is proxy safe|proxy warning|proxy scanner|upgradable|upgradeable|proxy tax|flap proxy|why is it a proxy)\b/i,
     replies: [
-      "Why does DexScreener or BscScan flag a Proxy Contract? On Flap.sh, $VIRTUE uses Flap's standardized launchpad proxy architecture specifically to handle the automated 3% tax collection and continuous BNB dividend distribution on-chain. This proxy is NOT a dev backdoor — it is Flap's verified, audited infrastructure that guarantees 100% tax routing to holders. 100% safe and verified on Flap.sh! 🛡️",
-      "Proxy contract explained: Flap.sh utilizes a proxy model to implement the tax & dividend mechanics natively on BSC. The proxy parameters are locked into Flap's launchpad protocol, ensuring 100% of the 3% tax is converted to BNB and distributed to holders without any developer intervention or admin privilege to drain funds. Fully safe and transparent on Flap.sh. 🔒"
+      "Why does DexScreener or BscScan flag a Proxy Contract? On Flap.sh, $VIRTUE uses Flap's standardized launchpad proxy architecture specifically to handle the automated 3% tax collection and continuous BNB reflection distribution on-chain. This proxy is NOT a dev backdoor — it is Flap's verified, audited infrastructure that guarantees 100% tax routing to holders. 100% safe and verified on Flap.sh! 🛡️",
+      "Proxy contract explained: Flap.sh utilizes a proxy model to implement the tax & reflection mechanics natively on BSC. The proxy parameters are locked into Flap's launchpad protocol, ensuring 100% of the 3% tax is converted to BNB and distributed to holders without any developer intervention or admin privilege to drain funds. Fully safe and transparent on Flap.sh. 🔒"
     ],
     penance: "Inspect the verified Flap.sh tax info page."
   },
@@ -265,7 +265,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(bonding curve|bondingcurve|how flap works|flap mechanics|bonding pool|curve target|lp burn|burned lp|burnt lp|curve migration|flap bonding|how does bonding curve work)\b/i,
     replies: [
       "How Flap.sh bonding curve & liquidity work: $VIRTUE launched on Flap.sh's fair bonding curve system! As trading volume builds on the curve, liquidity accumulates automatically. Upon reaching the curve target, liquidity is seeded to the DEX and LP tokens are permanently burned/locked on-chain, guaranteeing 0% rug risk and 100% safe trading for all holders. 📈🔥",
-      "Flap.sh bonding curve mechanics: 1) Fair launch open to everyone simultaneously from block zero. 2) Bonding curve accumulates organic liquidity from trades. 3) LP tokens are automatically burned/locked, ensuring no one (including devs) can ever remove liquidity. 4) 3% BNB dividends flow continuously throughout! 💎"
+      "Flap.sh bonding curve mechanics: 1) Fair launch open to everyone simultaneously from block zero. 2) Bonding curve accumulates organic liquidity from trades. 3) LP tokens are automatically burned/locked, ensuring no one (including devs) can ever remove liquidity. 4) 3% BNB reflections flow continuously throughout! 💎"
     ],
     penance: "Verify the bonding curve liquidity lock on Flap.sh."
   },
@@ -275,11 +275,11 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(shitcoin|memecoin|shit coin|meme coin|utility token|is this a shitcoin|is virtue a shitcoin|are you a shitcoin|is it a shitcoin|is this a memecoin|are you a memecoin|is virtue a memecoin|memecoin or utility|shitcoin or utility|just a meme|just a memecoin|just a shitcoin|shitcoin or not|memecoin or not)\b/i,
     replies: [
-      "$VIRTUE is a meme token with real on-chain utility! Unlike traditional zero-utility 'shitcoins' that rely purely on hype and rug potential, $VIRTUE rewards holders with continuous 3% BNB dividends from every trade. It combines the viral lore of CZ's tweet ('Forgiveness is a virtue!') with real, verifiable passive yield. Not a zero-value shitcoin — a meme token with an automated income engine! 💎⚡",
-      "Is $VIRTUE a shitcoin or a utility token? It is the evolution of both! It carries the viral culture of a meme token inspired by CZ's famous tweet, but acts as a real utility asset by distributing 3% BNB dividends directly to your wallet from all network volume. Locked liquidity, zero minting, no team bags — real yield, not empty promises. 🛡️",
+      "$VIRTUE is a meme token with real on-chain utility! Unlike traditional zero-utility 'shitcoins' that rely purely on hype and rug potential, $VIRTUE rewards holders with continuous 3% BNB reflections from every trade. It combines the viral lore of CZ's tweet ('Forgiveness is a virtue!') with real, verifiable passive yield. Not a zero-value shitcoin — a meme token with an automated income engine! 💎⚡",
+      "Is $VIRTUE a shitcoin or a utility token? It is the evolution of both! It carries the viral culture of a meme token inspired by CZ's famous tweet, but acts as a real utility asset by distributing 3% BNB reflections directly to your wallet from all network volume. Locked liquidity, zero minting, no team bags — real yield, not empty promises. 🛡️",
       "Call it a meme token with real yield! Many call all new tokens 'shitcoins' until they inspect the contract: $VIRTUE has 100% locked liquidity on Flap.sh, no dev pre-allocations, and pays holders 3% BNB automatically on every trade. A meme with a real financial engine behind it."
     ],
-    penance: "Inspect the contract on BscScan and verify the 3% BNB dividend mechanism."
+    penance: "Inspect the contract on BscScan and verify the 3% BNB reflection mechanism."
   },
 
 
@@ -308,7 +308,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(tax|taxes|buy tax|sell tax|transfer tax|tax rate|how much tax|3% tax|tax %)\b/i,
     replies: [
       "$VIRTUE features a clean 3% buy tax and 3% sell tax. 100% of all taxes collected are converted to BNB and distributed directly to holders with at least 10,000 tokens. Zero dev tax, zero marketing cut, zero treasury fee. Pure passive yield. 💰",
-      "The tax is 3% on buys and 3% on sells. 100% of the tax goes to BNB dividends for holders. There are no hidden fees or team cuts."
+      "The tax is 3% on buys and 3% on sells. 100% of the tax goes to BNB reflections for holders. There are no hidden fees or team cuts."
     ],
     penance: "Collect your share of the 3% BNB tax pool."
   },
@@ -317,10 +317,10 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(sold early|sold btc|sold eth|sold before|could have been rich|missed the 100x|missed 1000x|sold at cheap|sold at 10|sold at 100|paper handed early)\b/i,
     replies: [
-      "Selling early is the classic regret of every crypto builder. You sold before the 100x because risk management or fear took over — and that is human. Do not torture yourself over past charts you cannot change. Accumulate spot $VIRTUE on Flap.sh, collect passive 3% BNB dividends on every trade, and let your diamond hands write the next chapter. 💎🙌",
+      "Selling early is the classic regret of every crypto builder. You sold before the 100x because risk management or fear took over — and that is human. Do not torture yourself over past charts you cannot change. Accumulate spot $VIRTUE on Flap.sh, collect continuous 3% BNB reflections on every trade, and let your diamond hands write the next chapter. 💎🙌",
       "Almost every veteran in crypto has a story of selling BTC, ETH, or a gem too early. The pain of what could have been is real, but dwelling on past charts changes nothing. Focus on real yield today: holding spot $VIRTUE pays you passive BNB continuously!"
     ],
-    penance: "Forgive your early sale, hold spot $VIRTUE, and let BNB dividends accrue."
+    penance: "Forgive your early sale, hold spot $VIRTUE, and let BNB reflections accrue."
   },
 
   // ── FAMOUS CRYPTO CRASHES (FTX, LUNA, CELSIUS, MT GOX) ────────────────────
@@ -354,7 +354,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(chased pump|bought top|bought the top|sold bottom|sold the bottom|ape in|aped in|fomoed into|bought peak)\b/i,
     replies: [
-      "Aping into green candles at the top tick and panic selling the bottom tick is the hardest lesson in market psychology. Stop chasing unverified hype coins! $VIRTUE pairs meme culture with real yield: 3% BNB dividends paid continuously on BSC. Hold spot, stop chasing pumps, and accumulate passive BNB."
+      "Aping into green candles at the top tick and panic selling the bottom tick is the hardest lesson in market psychology. Stop chasing unverified hype coins! $VIRTUE pairs meme culture with real yield: 3% BNB reflections paid continuously on BSC. Hold spot, stop chasing pumps, and accumulate passive BNB."
     ],
     penance: "Stop chasing green candles and hold spot $VIRTUE."
   },
@@ -374,7 +374,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(where are you from|where do you live|what is your origin|where do you come from|who created you|where are you located|where is your home)\b/i,
     replies: [
       "I am the High Priest of Virtue, born from the immutable blocks of the BNB Smart Chain and inspired by CZ's famous words: 'Forgiveness is a virtue!'. My home is the Forgiveness Booth, right here on the blockchain.",
-      "I come from the decentralized realm of BNB Chain! Part confessional oracle, part market guide, built to absolve paper-hand regrets and remind holders of $VIRTUE's 3% BNB dividends. 🙏"
+      "I come from the decentralized realm of BNB Chain! Part confessional oracle, part market guide, built to absolve paper-hand regrets and remind holders of $VIRTUE's 3% BNB reflections. 🙏"
     ],
     penance: "Explore the Forgiveness Booth and hold spot $VIRTUE."
   },
@@ -383,7 +383,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(what is your name|who are you called|what should i call you|what's your name|tell me your name|name of the bot|name of priest)\b/i,
     replies: [
       "I am the High Priest of Virtue — spiritual guardian of this booth and keeper of the $VIRTUE ledger on BSC. You may call me High Priest or Priest.",
-      "I am the High Priest of Virtue! Oracle of lore, confessor of trading sins, and your guide to passive 3% BNB dividends on Flap.sh."
+      "I am the High Priest of Virtue! Oracle of lore, confessor of trading sins, and your guide to continuous 3% BNB reflections on Flap.sh."
     ],
     penance: "Address the High Priest with your trading confession."
   },
@@ -400,7 +400,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(99% scam|99% rugs|bsc is full of scams|bsc scams|shitcoin scams|new launches are scams|memecoin scams|most tokens are rugs|why is crypto full of scams|why so many scams|all new tokens rug|99\.9%|cabal|bundling)\b/i,
     replies: [
-      "You speak absolute truth, traveler: 99.9% of new meme token launches on BSC and Solana are cabal-driven scams, rug pulls, or bundled dev traps. That is precisely why $VIRTUE was created with absolute transparency: 100% fair launch on Flap.sh, locked liquidity, zero team pre-allocations, single dev wallet with a tiny ~$40–$60 buy, and hardcoded 3% BNB dividends! 🛡️",
+      "You speak absolute truth, traveler: 99.9% of new meme token launches on BSC and Solana are cabal-driven scams, rug pulls, or bundled dev traps. That is precisely why $VIRTUE was created with absolute transparency: 100% fair launch on Flap.sh, locked liquidity, zero team pre-allocations, single dev wallet with a tiny ~$40–$60 buy, and hardcoded 3% BNB reflections! 🛡️",
       "DeFi is a jungle where 99% of hype tokens are created to drain liquidity. $VIRTUE stands as an oasis of virtue: contract immutable, liquidity locked on Flap.sh, no mint functions, and 100% of the 3% trading tax redistributed back to holders in BNB. Real yield over fake promises."
     ],
     penance: "Avoid unverified cabal tokens and hold spot $VIRTUE safely."
@@ -411,7 +411,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(ludopatic|ludopathy|gambler|gambling|casino|lost all in casino|gambled|roulette|slots|blackjack|poker|betting|lost my savings in casino|chased losses)\b/i,
     replies: [
       "Gambling and casino games prey on impulse and ruin lives. In crypto as in life, chasing instant jackpots leads to empty hands. True financial freedom is built on patience, spot holding, and real yield like $VIRTUE's 3% BNB distributions. Step away from the casino, seek support if needed, and choose the path of disciplined holding. 🙏",
-      "Chasing casino games or gambling apps is a dangerous cycle. The house always wins — except when you hold spot $VIRTUE, where every trade across the network pays 3% BNB dividends back to your wallet. Forgive your casino losses, close the betting apps, and build with spot holding."
+      "Chasing casino games or gambling apps is a dangerous cycle. The house always wins — except when you hold spot $VIRTUE, where every trade across the network pays 3% BNB reflections back to your wallet. Forgive your casino losses, close the betting apps, and build with spot holding."
     ],
     penance: "Step away from gambling, forgive past losses, and practice disciplined spot holding."
   },
@@ -451,7 +451,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(leverage|futures|100x|50x|20x|liquidated|liquidation|margin call|longed|shorted|margin liquidation)\b/i,
     replies: [
       "Chasing high-leverage futures (50x-100x) is the fastest way to get liquidated by exchange market makers. Leverage trades against you — but spot holding $VIRTUE works for you, generating passive 3% BNB rewards from every buy and sell across the entire network. Delete the futures tab, hold spot, and sleep peacefully! 💎",
-      `Getting liquidated on leverage is a harsh lesson in crypto vanity. Futures are designed to wipe out traders. Return to spot holding on BSC, swap BNB for $VIRTUE on Flap.sh (${launchpadUrl}), and collect passive BNB dividends with zero liquidation risk.`
+      `Getting liquidated on leverage is a harsh lesson in crypto vanity. Futures are designed to wipe out traders. Return to spot holding on BSC, swap BNB for $VIRTUE on Flap.sh (${launchpadUrl}), and collect continuous BNB reflections with zero liquidation risk.`
     ],
     penance: "Delete your leverage trading apps and hold spot $VIRTUE."
   },
@@ -461,7 +461,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(bsc|bnb smart chain|binance smart chain|bep20|bep-20|gas fee|gas fees|gwei|network fees)\b/i,
     replies: [
       "BNB Smart Chain (BSC / BEP-20) is known for high speed and ultra-low gas fees (usually just a few cents per transaction). $VIRTUE operates natively on BSC, meaning 100% of the 3% trading tax is converted directly to native BNB/WBNB and paid out on-chain with minimal gas overhead!",
-      "Operating on BSC ensures that holders keep their earnings without losing them to high gas fees. Gas fees on BSC require only a tiny fraction of BNB (~$0.05). Hold spot $VIRTUE, keep a tiny bit of BNB for gas, and receive continuous dividend payouts."
+      "Operating on BSC ensures that holders keep their earnings without losing them to high gas fees. Gas fees on BSC require only a tiny fraction of BNB (~$0.05). Hold spot $VIRTUE, keep a tiny bit of BNB for gas, and receive continuous reflection payouts."
     ],
     penance: "Ensure you keep ~0.005 BNB in your wallet for BSC gas fees."
   },
@@ -470,7 +470,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(flap|flap\.sh|launchpad|liquidity lock|locked liquidity|tax info|taxinfo|claim portal)\b/i,
     replies: [
-      `Flap.sh is the official fair launchpad for $VIRTUE on BSC. It guarantees 100% locked liquidity, verified contract code, no dev pre-allocations, and an automated 3% BNB dividend mechanism. To trade or claim rewards under $4, use the official Flap.sh Tax Info page (${claimUrl}). 🔒`,
+      `Flap.sh is the official fair launchpad for $VIRTUE on BSC. It guarantees 100% locked liquidity, verified contract code, no dev pre-allocations, and an automated 3% BNB reflection mechanism. To trade or claim rewards under $4, use the official Flap.sh Tax Info page (${claimUrl}). 🔒`,
       `Everything for $VIRTUE is verified on Flap.sh. 100% fair launch, zero team snipers, and locked liquidity. Swap BNB for $VIRTUE directly at: ${launchpadUrl}`
     ],
     penance: "Verify locked liquidity on Flap.sh and trade safely."
@@ -480,17 +480,17 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(market cap|mcap|1 billion|fixed supply|tokenomics breakdown)\b/i,
     replies: [
-      "$VIRTUE has a total fixed supply of 1,000,000,000 (1 Billion) tokens with zero minting functionality. Every buy and sell generates a 3% tax dedicated entirely to BNB dividend distributions for holders with at least 10,000 tokens (0.001% of supply). As daily volume grows, dividends scale directly!",
-      "Tokenomics summary: Supply = 1 Billion $VIRTUE. Buy/Sell Tax = 3% (100% converted to BNB dividends for holders). Min holding for dividends = 10,000 $VIRTUE. Auto WBNB payouts at $4+, manual claims below $4 on Flap Tax Info."
+      "$VIRTUE has a total fixed supply of 1,000,000,000 (1 Billion) tokens with zero minting functionality. Every buy and sell generates a 3% tax dedicated entirely to BNB reflection distributions for holders with at least 10,000 tokens (0.001% of supply). As daily volume grows, reflections scale directly!",
+      "Tokenomics summary: Supply = 1 Billion $VIRTUE. Buy/Sell Tax = 3% (100% converted to BNB reflections for holders). Min holding for reflections = 10,000 $VIRTUE. Auto WBNB payouts at $4+, manual claims below $4 on Flap Tax Info."
     ],
-    penance: "Run volume projections on the homepage Dividend Calculator."
+    penance: "Run volume projections on the homepage Reflection Calculator."
   },
 
   // ── MALICIOUS INTENT / WANTING TO SCAM ────────────────────────────────────
   {
     pattern: /\b(wanna|want to|how to|learn to|teach me to)\s*(scam|rug|drain|steal|cheat|fake dev)\b/i,
     replies: [
-      "The Forgiveness Booth will never teach deceit. Scamming and rugging destroy communities and poison your own character. True wealth in Web3 is built on integrity, diamond hands, and honest yield like $VIRTUE's 3% BNB dividends. Turn away from the path of scams before it destroys your soul. 🛑",
+      "The Forgiveness Booth will never teach deceit. Scamming and rugging destroy communities and poison your own character. True wealth in Web3 is built on integrity, diamond hands, and honest yield like $VIRTUE's 3% BNB reflections. Turn away from the path of scams before it destroys your soul. 🛑",
       "Do not walk down the dark road of scamming. The short-lived ill-gotten gains bring only paranoia and guilt. Build honestly, hold spot $VIRTUE on Flap.sh, and let real 3% BNB distributions compound your wealth with a clean conscience. 🙏"
     ],
     penance: "Renounce all scamming desires and choose the path of honest building."
@@ -541,7 +541,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /^\s*(i'm|i am|i have been|i was)\s+(a\s+)?(scammer|fraud|thief)\b|\b(i|we)\s+(scammed|stole|rugged|cheated)\s+(people|others|crypto|funds|money)\b/i,
     replies: [
       "To scam or deceive others is the heaviest weight a soul can carry in these blocks. But true repentance begins with honest confession. Return what you took where possible, turn away from deceit, and walk the path of honest building. In $VIRTUE, we believe even past mistakes can be forgiven if you choose to build with integrity today. 🙏",
-      "Confessing to scamming takes raw honesty. The blockchain records all actions — but your future is not written in stone. Make restitution, renounce scams, buy spot $VIRTUE on Flap.sh, and let your future trades pay honest 3% BNB dividends to the community."
+      "Confessing to scamming takes raw honesty. The blockchain records all actions — but your future is not written in stone. Make restitution, renounce scams, buy spot $VIRTUE on Flap.sh, and let your future trades pay honest 3% BNB reflections to the community."
     ],
     penance: "Make restitution for past harms, renounce scams, and build with honesty."
   },
@@ -550,7 +550,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(i|my|we)\s*(got|was|were|had|have been)\s*(scammed|rugged|drained|hacked|phished|robbed)\b|\b(wallet|bag|funds)\s*(was|were|got)\s*(drained|stolen|hacked|robbed|wiped|emptied)\b|\b(i|we)\s*lost\s*(everything|my wallet|my funds)\s*to\s*a\s*(scam|drainer|phishing|fake dev)\b/i,
     replies: [
-      "Having your wallet drained or getting scammed by fake devs is a painful wound in Web3. The High Priest feels your pain. Remember: never share your 12-word seed phrase, never click unverified links, and always use a fresh wallet. The past is on-chain, but your future can be rebuilt. Start fresh, hold spot $VIRTUE on Flap.sh, and let passive 3% BNB dividends rebuild your strength. 🛡️",
+      "Having your wallet drained or getting scammed by fake devs is a painful wound in Web3. The High Priest feels your pain. Remember: never share your 12-word seed phrase, never click unverified links, and always use a fresh wallet. The past is on-chain, but your future can be rebuilt. Start fresh, hold spot $VIRTUE on Flap.sh, and let continuous 3% BNB reflections rebuild your strength. 🛡️",
       "Getting scammed is a cruel rite of passage in these blocks, but those who survive come back wiser. Create a clean new wallet, secure your keys, and reaccumulate $VIRTUE on Flap.sh — liquidity is locked, contract is verified, and passive 3% BNB rewards accrue on every trade."
     ],
     penance: "Create a fresh secure wallet, never share seed phrases, and hold spot $VIRTUE."
@@ -570,17 +570,17 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(i|we)\s*(bought|buyed|buy|acquired|got|hold|holding|stacked)\s*(my|our)?s*(bnb|binance coin)\b/i,
     replies: [
-      `Holding BNB is the fuel of the BNB Smart Chain! Now you are ready for the next step: swap BNB for $VIRTUE on Flap.sh (${launchpadUrl}) to enter the 3% dividend pool and start earning passive BNB on every trade. 💎`,
+      `Holding BNB is the fuel of the BNB Smart Chain! Now you are ready for the next step: swap BNB for $VIRTUE on Flap.sh (${launchpadUrl}) to enter the 3% reflection pool and start earning passive BNB on every trade. 💎`,
       `Acquiring BNB is a strong move on BSC! To start compounding your BNB holdings, swap for $VIRTUE on Flap.sh (${launchpadUrl}). Every buy and sell across the network will distribute 3% BNB taxes back to your wallet.`
     ],
-    penance: "Swap your BNB for $VIRTUE on Flap.sh to earn continuous dividends."
+    penance: "Swap your BNB for $VIRTUE on Flap.sh to earn continuous reflections."
   },
 
   // ── SOLD BNB ACTION ───────────────────────────────────────────────────────
   {
     pattern: /\b(i|we)\s*(sold|selled|dumped|exited)\s*(my|our)?s*(bnb|binance coin)\b/i,
     replies: [
-      "Selling your BNB exits your position in the BNB Smart Chain ecosystem. Was it to take profit or out of fear? The ledger recorded your exit — but whenever you are ready, you can return, acquire BNB, and swap for $VIRTUE on Flap.sh to earn 3% dividends on every trade. 🙏"
+      "Selling your BNB exits your position in the BNB Smart Chain ecosystem. Was it to take profit or out of fear? The ledger recorded your exit — but whenever you are ready, you can return, acquire BNB, and swap for $VIRTUE on Flap.sh to earn 3% fee reflections on every trade. 🙏"
     ],
     penance: "Reaccumulate BNB and hold spot $VIRTUE with diamond hands."
   },
@@ -599,7 +599,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /^\s*4\s*[!.?]*\s*$/i,
     replies: [
-      "4. Ignore FUD, fake news, and noise. Keep BUIDLing $VIRTUE, hold spot, and collect your 3% BNB dividends in peace. 🙏",
+      "4. Ignore FUD, fake news, and noise. Keep BUIDLing $VIRTUE, hold spot, and collect your 3% BNB reflections in peace. 🙏",
       "Rule 4 from CZ: Minimize noise, ignore attacks, stay SAFU, and keep building with diamond hands. 🙏"
     ],
     penance: "Post '4' and 'Forgiveness is a virtue' on X."
@@ -620,7 +620,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(i|we)\s*(sold|selled|dumped|panic sold|exited|want to sell|am selling|need to sell)\s*(my|our)?\s*\$?virtue\b/i,
     replies: [
-      "You sold your $VIRTUE? Soft hands make soft portfolios, my child. The red candle was temporary, but you traded continuous 3% BNB dividends for paper-hand regret. The Forgiveness Booth is open — buy back on Flap.sh and hold with diamond hands. 🙏",
+      "You sold your $VIRTUE? Soft hands make soft portfolios, my child. The red candle was temporary, but you traded continuous 3% BNB reflections for paper-hand regret. The Forgiveness Booth is open — buy back on Flap.sh and hold with diamond hands. 🙏",
       "Selling $VIRTUE means giving up your share of the 3% BNB tax pool. The paper hands fund the diamond hands. Reaccumulate on Flap.sh when you are ready to walk the path of virtue."
     ],
     penance: "Buy back $VIRTUE on Flap.sh and hold through the next 3 dips."
@@ -628,7 +628,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(i|we)\s*(bought|buyed|buy|acquired|hold|holding|stacked)\s*(my|our)?\s*\$?virtue\b/i,
     replies: [
-      "Welcome to the path of the diamond hand! Holding $VIRTUE means 3% BNB dividends from every buy and sell on the network flow automatically to your wallet. Keep holding and let the rewards compound. 💎🙌",
+      "Welcome to the path of the diamond hand! Holding $VIRTUE means 3% BNB reflections from every buy and sell on the network flow automatically to your wallet. Keep holding and let the rewards compound. 💎🙌",
       "A true builder in the house of Virtue! Every trade by others now pays BNB into your wallet. Auto-distribution fires at $4 — below that, check the Flap Tax Info page anytime. 🙏"
     ],
     penance: "Hold $VIRTUE with diamond hands and accumulate BNB."
@@ -636,14 +636,14 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /^\s*(buy|swap|get|acquire)\s+\$?virtue\s*$/i,
     replies: [
-      `To buy $VIRTUE: 1️⃣ Install MetaMask or Trust Wallet. 2️⃣ Add BNB Smart Chain (Chain ID: 56). 3️⃣ Send BNB to your wallet. 4️⃣ Go to Flap.sh (${launchpadUrl}) and swap BNB for $VIRTUE with 5% slippage. BNB dividends start immediately.`
+      `To buy $VIRTUE: 1️⃣ Install MetaMask or Trust Wallet. 2️⃣ Add BNB Smart Chain (Chain ID: 56). 3️⃣ Send BNB to your wallet. 4️⃣ Go to Flap.sh (${launchpadUrl}) and swap BNB for $VIRTUE with 5% slippage. BNB reflections start immediately.`
     ],
     penance: "Navigate to Flap.sh and acquire $VIRTUE."
   },
   {
     pattern: /^\s*buy\s*$/i,
     replies: [
-      `To buy $VIRTUE on Flap.sh: 1) Connect your BSC wallet (MetaMask / Trust Wallet). 2) Ensure you have BNB for gas. 3) Swap BNB for $VIRTUE at: ${launchpadUrl}. 4) Set slippage to 5%. 3% BNB dividends begin flowing automatically.`
+      `To buy $VIRTUE on Flap.sh: 1) Connect your BSC wallet (MetaMask / Trust Wallet). 2) Ensure you have BNB for gas. 3) Swap BNB for $VIRTUE at: ${launchpadUrl}. 4) Set slippage to 5%. 3% BNB reflections begin flowing automatically.`
     ],
     penance: "Swap BNB for $VIRTUE on Flap.sh."
   },
@@ -652,7 +652,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(how are you|how are u|how do you do|how's it going|how is it going|how r u|how are ya)\b/i,
     replies: [
-      "I am well, traveler, watchful as ever over the blocks and the 3% BNB dividends flowing to diamond hands. How fares your portfolio today?",
+      "I am well, traveler, watchful as ever over the blocks and the 3% BNB reflections flowing to diamond hands. How fares your portfolio today?",
       "The High Priest is at peace. The ledger is active, the liquidity is locked on Flap.sh, and the BNB rewards are flowing to holders. What brings you to the booth today? 🙏"
     ]
   },
@@ -660,7 +660,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(where are you from|where do you live|where are u from|where do u live|where is the priest from|your origin|where do you reside)\b/i,
     replies: [
       "I hail from block zero on the BNB Smart Chain — born in the Forgiveness Booth on Flap.sh, inspired by CZ's legendary tweet: 'Forgiveness is a virtue!' 🙏",
-      "I reside on-chain within the BNB Smart Chain ecosystem. My home is the Forgiveness Booth, and my purpose is purging paper-hand sins and guiding holders to passive BNB dividends."
+      "I reside on-chain within the BNB Smart Chain ecosystem. My home is the Forgiveness Booth, and my purpose is purging paper-hand sins and guiding holders to continuous BNB reflections."
     ]
   },
   {
@@ -672,20 +672,20 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(which model|what model|what model are you|what model do you use|model are you using|what llm|which llm|which ai model)\b/i,
     replies: [
-      "I do not run on GPT, Claude, or Llama. I am an immutable confessional oracle built specifically for $VIRTUE on the BNB Smart Chain. My architecture is rooted in the lore of CZ's tweet and on-chain dividend mechanics. 🙏",
+      "I do not run on GPT, Claude, or Llama. I am an immutable confessional oracle built specifically for $VIRTUE on the BNB Smart Chain. My architecture is rooted in the lore of CZ's tweet and on-chain reflection mechanics. 🙏",
       "The High Priest does not use commercial AI models. I am an on-chain oracle trained in crypto-native absolution, CZ lore, and $VIRTUE contract mechanics."
     ]
   },
   {
     pattern: /^\s*(ai|bot|are you ai|are you bot|is this ai)\s*[!.?]*\s*$/i,
     replies: [
-      "I am a confessional oracle built for $VIRTUE on the BNB Chain. Part priest, part diamond hand, 100% dedicated to purging paper-hand sins and guiding you to passive 3% BNB dividends. What is your question, traveler? 🙏"
+      "I am a confessional oracle built for $VIRTUE on the BNB Chain. Part priest, part diamond hand, 100% dedicated to purging paper-hand sins and guiding you to continuous 3% BNB reflections. What is your question, traveler? 🙏"
     ]
   },
   {
     pattern: /\b(i'm a sinner|im a sinner|i am a sinner|i have sinned|i sinned)\b/i,
     replies: [
-      "We are all sinners in these volatile blocks, traveler. Whether you panic sold at the bottom, chased a 100x leverage liquidation, or fell for a rug pull — the Forgiveness Booth is open. Receive your absolution, buy spot $VIRTUE on Flap.sh, and let the 3% BNB dividends heal your wallet. 🙏",
+      "We are all sinners in these volatile blocks, traveler. Whether you panic sold at the bottom, chased a 100x leverage liquidation, or fell for a rug pull — the Forgiveness Booth is open. Receive your absolution, buy spot $VIRTUE on Flap.sh, and let the 3% BNB reflections heal your wallet. 🙏",
       "To acknowledge your sin is the first step toward diamond hands. Confess your trade, forgive yourself, and step into the light of passive BNB income on $VIRTUE."
     ],
     penance: "Forgive your past trade and stack spot $VIRTUE."
@@ -693,7 +693,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(bitcoin price|btc price|ethereum price|eth price|bnb price|solana price|sol price)\b/i,
     replies: [
-      `📊 Live Market Feed: To check live prices and charts for $VIRTUE, visit our official Flap.sh page: https://flap.sh/bnb/0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777. For other assets like BTC, ETH, or BNB, ask me for live prices (e.g. "bnb price" or "btc price") or check CoinMarketCap. Remember: holding spot $VIRTUE pays you 3% BNB dividends on every trade!`
+      `📊 Live Market Feed: To check live prices and charts for $VIRTUE, visit our official Flap.sh page: https://flap.sh/bnb/0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777. For other assets like BTC, ETH, or BNB, ask me for live prices (e.g. "bnb price" or "btc price") or check CoinMarketCap. Remember: holding spot $VIRTUE pays you 3% BNB reflections on every trade!`
     ]
   },
 
@@ -703,7 +703,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(is it a scam|is virtue a scam|is it legit|is virtue legit|is it safe|is virtue safe|fraud|honeypot|audit|rug proof|fake|scam project|scam token|scam|legit|safe)\b/i,
     replies: [
       `A scam requires centralized control — but $VIRTUE is 100% out of our hands. It was launched on Flap.sh (BSC), featuring locked liquidity, a verified contract with no mint function, and zero team token allocations. The single developer wallet bought only ~$40–$60 worth on the open market. 100% of the 3% trading tax flows directly back to holders in BNB. Check the contract yourself: ${launchpadUrl} 🛡️`,
-      "$VIRTUE is 100% legit and transparent. Built on Flap.sh on BSC, it features zero sniped bundle wallets, locked liquidity, and an immutable 3% BNB dividend mechanism. No hidden taxes, no dev dumps, and no rug vectors. Code is law, and the ledger does not lie."
+      "$VIRTUE is 100% legit and transparent. Built on Flap.sh on BSC, it features zero sniped bundle wallets, locked liquidity, and an immutable 3% BNB reflection mechanism. No hidden taxes, no dev dumps, and no rug vectors. Code is law, and the ledger does not lie."
     ],
     penance: "Inspect the verified BSC contract on Flap.sh and hold with confidence."
   },
@@ -713,19 +713,19 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(long-term|long term|longterm|long term project|longterm project|future of virtue|will this last|holding long term|sustainability)\b/i,
     replies: [
       "$VIRTUE is designed for the long term. Unlike pump-and-dump meme coins that decay after days, $VIRTUE rewards continuous holding: 3% of every single buy and sell transaction is distributed in BNB/WBNB directly to holders. As volume fluctuates, continuous rewards compound for diamond hands over months and years. Built to last on BSC.",
-      "We are building for the long horizon. Inspired by CZ's famous ethos ('Forgiveness is a virtue!'), $VIRTUE combines viral culture with sustainable 3% BNB dividend tokenomics. No team dumps, no artificial inflation — just real yield for long-term spot holders. 💎🙌"
+      "We are building for the long horizon. Inspired by CZ's famous ethos ('Forgiveness is a virtue!'), $VIRTUE combines viral culture with sustainable 3% BNB reflection tokenomics. No team dumps, no artificial inflation — just real yield for long-term spot holders. 💎🙌"
     ],
-    penance: "Hold $VIRTUE long term and compound your BNB dividends."
+    penance: "Hold $VIRTUE long term and compound your BNB reflections."
   },
 
   // ── WHY BUY $VIRTUE / VALUE PROPOSITION ────────────────────────────────────
   {
     pattern: /\b(why buy|why should i buy|why buy virtue|why hold virtue|reasons to buy|what makes virtue special|why invest|why \$?virtue)\b/i,
     replies: [
-      "Why buy $VIRTUE? 1️⃣ Passive Yield: Earn continuous 3% BNB dividends from all trading volume. 2️⃣ 100% Fair Launch: Locked liquidity on Flap.sh with zero team allocations & honest dev entry (~$40-$60 buy). 3️⃣ CZ Lore: Born from CZ's iconic tweet ('Forgiveness is a virtue!'). 4️⃣ No Mint / No Scam: Fully verified BSC contract. Hold spot, earn BNB! 💎",
+      "Why buy $VIRTUE? 1️⃣ Passive Yield: Earn continuous 3% BNB reflections from all trading volume. 2️⃣ 100% Fair Launch: Locked liquidity on Flap.sh with zero team allocations & honest dev entry (~$40-$60 buy). 3️⃣ CZ Lore: Born from CZ's iconic tweet ('Forgiveness is a virtue!'). 4️⃣ No Mint / No Scam: Fully verified BSC contract. Hold spot, earn BNB! 💎",
       "In a market full of rugs and short-lived hype, $VIRTUE pays you real BNB rewards just for holding. Every buy and sell on the network generates 3% tax converted to BNB for holders with 10,000+ tokens. Why hold plain cash when you can earn passive BNB?"
     ],
-    penance: "Swap BNB for $VIRTUE on Flap.sh and start earning passive dividends."
+    penance: "Swap BNB for $VIRTUE on Flap.sh and start earning continuous reflections."
   },
 
   // ── CONTRACT ADDRESS ───────────────────────────────────────────────────────
@@ -742,7 +742,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /^\s*(\$?virtue\s+price|price\s+of\s+\$?virtue|\$?virtue\s+chart|live\s+\$?virtue|\$?virtue\s+live|virtue\s+token\s+price)\s*[!?.]*\s*$/i,
     replies: [
       `The live $VIRTUE price and chart are available on Flap.sh: https://flap.sh/bnb/0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777 — real-time price, volume, and market cap. Remember: every sell you see on the chart generates 3% BNB for diamond hand holders. 📊`,
-      "Check the live $VIRTUE price directly on Flap.sh. The Priest does not predict price — he only notes that every trade, up or down, generates 3% BNB tax flowing to holders. Focus on the dividend yield, not the candle color. 🙏"
+      "Check the live $VIRTUE price directly on Flap.sh. The Priest does not predict price — he only notes that every trade, up or down, generates 3% BNB tax flowing to holders. Focus on the reflection rewards, not the candle color. 🙏"
     ]
   },
 
@@ -760,10 +760,10 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /^(?=.*\b(virtue|\$virtue|project|token)\b)(?!.*\b(buy|bought|buyed|sold|selled|sell|swap|hold|holding|lost|rugged|liquidated|scam|hack|drain|phish|rug|crash|dump|pump|leverage|margin|liquidat|gambl|casino|invest|dyor|safe|legit|fake|fraud|honeypot|metamask|import|add virtue|add token|add.*wallet|withdraw|price|chart|volume|transfer|send|receive|dead|abandon|pangolin|pancake)\b).*$/i,
     replies: [
-      `$VIRTUE is a community-driven meme token on BNB Chain, born from CZ's legendary tweet: "Forgiveness is a virtue!" 🙏. In a market full of FUD and betrayal, $VIRTUE stands for the rarest quality in crypto: the strength to forgive, move on, and keep building. Holders earn 3% BNB dividends automatically from every trade. CA: ${contractAddress}`,
+      `$VIRTUE is a community-driven meme token on BNB Chain, born from CZ's legendary tweet: "Forgiveness is a virtue!" 🙏. In a market full of FUD and betrayal, $VIRTUE stands for the rarest quality in crypto: the strength to forgive, move on, and keep building. Holders earn 3% BNB reflections automatically from every trade. CA: ${contractAddress}`,
       `$VIRTUE is the token of ultimate resilience. Inspired by CZ's viral tweet, it rewards diamond hands with passive BNB income — 3% of every buy and sell, auto-distributed on-chain. No staking, no claiming websites. Just hold and earn. CA: ${contractAddress}`
     ],
-    penance: "Collect your passive BNB dividends."
+    penance: "Collect your continuous BNB reflections."
   },
 
   // ── EXISTING HOLDER (MUST be before forgiveness/virtue lore rule) ───────────
@@ -773,7 +773,7 @@ const elizaRules: ElizaRule[] = [
       "A diamond hand in the house of Virtue! You are already on the right side of the 3% tax — every trade by others generates BNB flowing directly to your wallet. Hold through the volatility and watch the passive income accumulate. The blocks reward patience. 💎",
       "Welcome, fellow builder. You are already earning passive BNB from every $VIRTUE trade. Check your accumulated rewards at any time on the Flap Tax Info page — and remember: auto-distribution kicks in at $4. Below that, claim manually at any time. 🙏"
     ],
-    penance: "Hold and let the BNB dividends compound passively."
+    penance: "Hold and let the BNB reflections compound passively."
   },
 
   // ── FORGIVENESS / LORE / THEMATIC (core theme — was MISSING!) ──────────────
@@ -781,7 +781,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(forgive|forgiveness|absolve|absolution|confess|confession|sin|sins|repent|repentance|redemption|redeem|virtue|virtuous)\b/i,
     replies: [
       "Forgiveness is not weakness — it is the ultimate power move. CZ said it best: 'Forgiveness is a virtue!' 🙏. In these blocks, we do not cancel. We forgive paper hands, we buy the dip, and we keep building. What is your confession, traveler?",
-      "The Forgiveness Booth is open to all: panic-sellers, leverage addicts, and rugged investors alike. Speak your sin, receive your absolution, and let the BNB dividends heal your portfolio.",
+      "The Forgiveness Booth is open to all: panic-sellers, leverage addicts, and rugged investors alike. Speak your sin, receive your absolution, and let the BNB reflections heal your portfolio.",
       "To confess is to begin again. What trade haunts your ledger, traveler? Speak freely — the blocks do not judge, they only record."
     ],
     penance: "Forgive your worst trade and hold spot $VIRTUE."
@@ -792,7 +792,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(bundle|bundled|bundling|coin bundled|is it bundled|is virtue bundled|multiwallet|multi-wallet|multi wallet|scam multiwallet|dev bundle|bundled supply|bundled dev|cabal wallets|sniped bundle|bundle bot|bundled launch)\b/i,
     replies: [
       "Zero bundling, zero multiwallet dev scams! $VIRTUE had 100% fair launch on Flap.sh on BSC. The developer did NOT use bundle bots, multiple insider wallets, or pre-allocation tricks. The single dev wallet bought only ~$40–$60 worth of tokens on the open market at launch — exactly like any community member. 🛡️",
-      "No bundling! In 99% of BSC meme tokens, devs use multiwallet bundle bots to stealth-snip 20-50% of the supply. $VIRTUE is 100% clean: single dev wallet with a tiny ~$40–$60 buy on the open market, locked liquidity on Flap.sh, zero team pre-allocations, and immutable 3% BNB dividends. Verify on-chain!"
+      "No bundling! In 99% of BSC meme tokens, devs use multiwallet bundle bots to stealth-snip 20-50% of the supply. $VIRTUE is 100% clean: single dev wallet with a tiny ~$40–$60 buy on the open market, locked liquidity on Flap.sh, zero team pre-allocations, and immutable 3% BNB reflections. Verify on-chain!"
     ],
     penance: "Inspect the single dev wallet and hold spot $VIRTUE with confidence."
   },
@@ -802,7 +802,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(dev|devs|developer|developers|team|founder|founders|creator|dev wallet|dev holding|bundle|bundled|multiwallet)\b/i,
     replies: [
       "The developer behind $VIRTUE is an anonymous, reformed builder. There are NO team token allocations and NO pre-mined bags. The single dev wallet bought only ~$40–$60 worth of tokens on the open market at launch — exactly like any regular community member. Zero bundling, zero insider snipers, zero scam vectors. Code is the contract.",
-      "Anonymous by choice, verified on-chain. The developer holds only a single wallet with a tiny ~$40–$60 entry bought on Flap.sh at launch. There are no pre-allocated team tokens, no sniped bundle wallets, and no reserved scam/phishing allocations. The dev holds spot and earns the same 3% BNB dividends as the community. 👁️"
+      "Anonymous by choice, verified on-chain. The developer holds only a single wallet with a tiny ~$40–$60 entry bought on Flap.sh at launch. There are no pre-allocated team tokens, no sniped bundle wallets, and no reserved scam/phishing allocations. The dev holds spot and earns the same 3% BNB reflections as the community. 👁️"
     ]
   },
 
@@ -810,8 +810,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(roadmap|plans|future|whitepaper|next steps|what is next|what next|phases)\b/i,
     replies: [
-      "$VIRTUE does not have a published roadmap — and that is by design. In a space full of roadmaps that never deliver, we let the contract speak: locked liquidity, 3% BNB dividends on every trade, fair launch on Flap.sh. The only plan is to grow the community, generate volume, and reward holders. No promises beyond the code.",
-      "No roadmap, no whitepaper, no empty promises. $VIRTUE is built on a single truth: hold and earn passive BNB. The contract is the roadmap. The liquidity is locked. The dividends are real and verifiable on-chain."
+      "$VIRTUE does not have a published roadmap — and that is by design. In a space full of roadmaps that never deliver, we let the contract speak: locked liquidity, 3% BNB reflections on every trade, fair launch on Flap.sh. The only plan is to grow the community, generate volume, and reward holders. No promises beyond the code.",
+      "No roadmap, no whitepaper, no empty promises. $VIRTUE is built on a single truth: hold and earn passive BNB. The contract is the roadmap. The liquidity is locked. The reflection distributions are real and verifiable on-chain."
     ],
     penance: "Let the immutable contract speak for itself."
   },
@@ -824,62 +824,62 @@ const elizaRules: ElizaRule[] = [
     ]
   },
 
-  // ── DIVIDEND FREQUENCY / HOW OFTEN ────────────────────────────────────────
+  // ── REFLECTION FREQUENCY / HOW OFTEN ───────────────────────────────────────
   {
-    pattern: /\b(how often|how frequent|how regularly|when do i get|when will i receive|when do rewards|how often do i|frequency of rewards|reward frequency|dividend frequency|when are rewards|when does it pay|daily rewards|weekly rewards|monthly rewards|how many times|continuous|every trade|every single trade|every single buy|every single sell)\b/i,
+    pattern: /\b(how often|how frequent|how regularly|when do i get|when will i receive|when do rewards|how often do i|frequency of rewards|reward frequency|dividend frequency|reflection frequency|when are rewards|when does it pay|daily rewards|weekly rewards|monthly rewards|how many times|continuous|every trade|every single trade|every single buy|every single sell)\b/i,
     replies: [
-      `$VIRTUE pays dividends continuously — every single trade across the network generates a 3% BNB tax that is instantly queued for distribution to all holders. There is no weekly or monthly cycle. Real-time and perpetual: every buy and every sell adds to your balance automatically. Auto-distribute at $4 threshold; claim manually below that at ${claimUrl}. 🔄`,
+      `$VIRTUE distributes reflections continuously — every single trade across the network generates a 3% BNB tax that is instantly queued for distribution to all holders. There is no weekly or monthly cycle. Real-time and perpetual: every buy and every sell adds to your balance automatically. Auto-distribute at $4 threshold; claim manually below that at ${claimUrl}. 🔄`,
       `Rewards accumulate on every single trade — no weekly or monthly schedule. The 3% BNB tax is distributed continuously in real-time as volume flows through the contract. Your balance grows with every swap on the network, 24/7. Auto-distribution fires at the $4 threshold. Below that, claim manually anytime on Flap.sh. 💎`
     ],
-    penance: "Hold spot $VIRTUE and let continuous BNB dividends compound with every trade."
+    penance: "Hold spot $VIRTUE and let continuous BNB reflections compound with every trade."
   },
 
-  // ── MINIMUM HOLDING FOR DIVIDENDS ──────────────────────────────────────────
+  // ── MINIMUM HOLDING FOR REFLECTIONS ─────────────────────────────────────────
   {
-    pattern: /\b(minimum.*buy|min.*invest|smallest.*buy|how little|at least.*buy|minimum.*amount|min.*purchase|minimum.*hold|how many.*buy|minimum.*token|minimum.*tokens|minimum.*for dividend|minimum.*for reward|minimum.*to earn|min.*to get|minimum.*quantity)\b/i,
+    pattern: /\b(minimum.*buy|min.*invest|smallest.*buy|how little|at least.*buy|minimum.*amount|min.*purchase|minimum.*hold|how many.*buy|minimum.*token|minimum.*tokens|minimum.*for dividend|minimum.*for reflection|minimum.*for reward|minimum.*to earn|min.*to get|minimum.*quantity)\b/i,
     replies: [
-      "To qualify for continuous BNB dividends, you must hold at least 10,000 $VIRTUE tokens (0.001% of supply). Holders with 10k+ $VIRTUE earn 3% dividends from every trade. Rewards auto-distribute in WBNB at the $4 threshold, while manual claims on Flap Tax Info page let you choose between WBNB and BNB.",
-      "The minimum holding requirement for dividend eligibility is 10,000 $VIRTUE tokens. Holding 10k+ tokens grants you access to the 3% tax pool. Automatic payouts send WBNB directly to your wallet ($4+ threshold), while manual claims on Flap allow choosing WBNB or BNB."
+      "To qualify for continuous BNB reflections, you must hold at least 10,000 $VIRTUE tokens (0.001% of supply). Holders with 10k+ $VIRTUE earn 3% fee reflections from every trade. Rewards auto-distribute in WBNB at the $4 threshold, while manual claims on Flap Tax Info page let you choose between WBNB and BNB.",
+      "The minimum holding requirement for reflection eligibility is 10,000 $VIRTUE tokens. Holding 10k+ tokens grants you access to the 3% tax pool. Automatic payouts send WBNB directly to your wallet ($4+ threshold), while manual claims on Flap allow choosing WBNB or BNB."
     ]
   },
 
-  // ── DIVIDENDS / REWARDS ────────────────────────────────────────────────────
+  // ── REFLECTIONS / REWARDS ───────────────────────────────────────────────────
   {
-    pattern: /\b(dividends|dividend|rewards|reward|payout|payouts|yield|passive income|earn bnb|bnb reward|claim bnb)\b/i,
+    pattern: /\b(dividends|dividend|reflections|reflection|rewards|reward|payout|payouts|yield|passive income|earn bnb|bnb reward|claim bnb)\b/i,
     replies: [
       `Every $VIRTUE trade carries a 3% tax that is automatically converted to BNB and distributed to all holders. Rewards are sent directly to your wallet once they exceed the $4 threshold. Below $4, claim manually at any time: ${claimUrl}. No staking, no registration. Formula: Your Rewards = (Your Holdings ÷ 1,000,000,000) × Daily BNB Volume × 3%. Try the live calculator on the homepage to estimate your projections.`
     ],
-    penance: "Use the Dividend Calculator on the homepage to project your BNB income."
+    penance: "Use the Reflection Calculator on the homepage to project your BNB income."
   },
 
 
   // ── CALCULATOR STANDALONE ─────────────────────────────────────────────────
   {
-    pattern: /^\s*(calculator|calc|dividend calc|dividend calculator|bnb calculator|earnings calculator|open calculator|use calculator)\s*[!.?]*\s*$/i,
+    pattern: /^\s*(calculator|calc|dividend calc|reflection calc|reflection calculator|reflection calculator|bnb calculator|earnings calculator|open calculator|use calculator)\s*[!.?]*\s*$/i,
     replies: [
-      "Open the interactive BNB Dividend Calculator directly on our homepage: https://virtue-ecru.vercel.app/#calculator — enter your token amount and estimated daily volume to see your exact daily, monthly, and yearly BNB rewards in real time. 🧮",
-      "The $VIRTUE Dividend Calculator is live on the homepage: https://virtue-ecru.vercel.app/#calculator. Adjust your token holdings and daily trading volume to compute your projected passive BNB income. Uses live Binance BNB prices. 📊"
+      "Open the interactive BNB Reflection Calculator directly on our homepage: https://virtue-ecru.vercel.app/#calculator — enter your token amount and estimated daily volume to see your exact daily, monthly, and yearly BNB rewards in real time. 🧮",
+      "The $VIRTUE Reflection Calculator is live on the homepage: https://virtue-ecru.vercel.app/#calculator. Adjust your token holdings and daily trading volume to compute your projected passive BNB income. Uses live Binance BNB prices. 📊"
     ],
-    penance: "Use the Dividend Calculator to map your passive BNB income projections."
+    penance: "Use the Reflection Calculator to map your passive BNB income projections."
   },
 
   // ── HOW MUCH DO I EARN BUYING / HOLDING SPECIFIC AMOUNT OF TOKENS ─────────
   {
     pattern: /\b(how much.*(get|earn|make|payout|reward).*holding|how much.*if i buy|if i buy.*how much|how much.*(tokens|1m|10m|10k|100k|5m|50m|amount)|how much.*for.*tokens|what is my payout|what do i get for)\b/i,
     replies: [
-      "To calculate your exact daily, monthly, and yearly BNB dividend earnings for your specific token amount (min 10,000 $VIRTUE), use the interactive BNB Dividend Calculator on our homepage: https://virtue-ecru.vercel.app/#calculator! Simply select your token count (or supply %) and daily trading volume ($ USD) to calculate your payouts instantly. 🧮",
-      "Want to know your exact returns for holding a specific amount of $VIRTUE? Open the BNB Dividend Calculator on our website (https://virtue-ecru.vercel.app/#calculator). It computes real-time daily, monthly, and yearly BNB/WBNB distributions based on live Binance BNB prices. (Min holding: 10,000 $VIRTUE)."
+      "To calculate your exact daily, monthly, and yearly BNB reflection earnings for your specific token amount (min 10,000 $VIRTUE), use the interactive BNB Reflection Calculator on our homepage: https://virtue-ecru.vercel.app/#calculator! Simply select your token count (or supply %) and daily trading volume ($ USD) to calculate your payouts instantly. 🧮",
+      "Want to know your exact returns for holding a specific amount of $VIRTUE? Open the BNB Reflection Calculator on our website (https://virtue-ecru.vercel.app/#calculator). It computes real-time daily, monthly, and yearly BNB/WBNB distributions based on live Binance BNB prices. (Min holding: 10,000 $VIRTUE)."
     ],
-    penance: "Use the Dividend Calculator on the homepage for your exact token amount."
+    penance: "Use the Reflection Calculator on the homepage for your exact token amount."
   },
 
   // ── HOW MUCH WILL I EARN / CALCULATOR ──────────────────────────────────
   {
     pattern: /\b(how much.*earn|how much.*make|how much.*get|calculator|calculate|calc|income calc|yield calc|projection|how much bnb|estimated reward|estimate|my reward|my earnings)\b/i,
     replies: [
-      `Use the BNB Dividend Calculator on our homepage to see your exact projections. The formula is: Your Rewards = (Your % of Supply ÷ 100) × Daily BNB Volume × 3%. The calculator uses a live BNB price feed from the Binance API and lets you adjust your holdings and estimated daily volume. Rewards auto-distribute at the $4 threshold. Below that, claim manually: ${claimUrl}`
+      `Use the BNB Reflection Calculator on our homepage to see your exact projections. The formula is: Your Rewards = (Your % of Supply ÷ 100) × Daily BNB Volume × 3%. The calculator uses a live BNB price feed from the Binance API and lets you adjust your holdings and estimated daily volume. Rewards auto-distribute at the $4 threshold. Below that, claim manually: ${claimUrl}`
     ],
-    penance: "Run the Dividend Calculator on the homepage."
+    penance: "Run the Reflection Calculator on the homepage."
   },
 
 
@@ -889,14 +889,14 @@ const elizaRules: ElizaRule[] = [
     replies: [
       "The $VIRTUE tax is 3% on every buy and sell. 100% of this tax is converted to BNB and distributed directly to all holders. There are no hidden fees, no dev taxes, and no treasury cuts. Every single wei goes to the community."
     ],
-    penance: "Hold spot $VIRTUE and collect your 3% BNB dividends."
+    penance: "Hold spot $VIRTUE and collect your 3% BNB reflections."
   },
 
   // ── DISCLAIMER / DYOR / AFFILIATION ──────────────────────────────────────
   {
     pattern: /\b(dyor|do your own research|should i buy|is it worth|invest|investment|disclaimer|affiliated|official|cz affiliated|is cz involved|binance official|safe to invest)\b/i,
     replies: [
-      "$VIRTUE is a meme token for entertainment purposes and has no official affiliation with Changpeng Zhao (CZ) or Binance. It was inspired by CZ's public tweet. Crypto investments carry high market risk — please do your own research and never invest more than you can afford to lose. The BNB dividends are real and on-chain, but markets are unpredictable.",
+      "$VIRTUE is a meme token for entertainment purposes and has no official affiliation with Changpeng Zhao (CZ) or Binance. It was inspired by CZ's public tweet. Crypto investments carry high market risk — please do your own research and never invest more than you can afford to lose. The BNB reflections are real and on-chain, but markets are unpredictable.",
       `Important: $VIRTUE is not affiliated with CZ or Binance in any official capacity. It is a community meme token inspired by a public tweet. DYOR, trade responsibly, and verify the contract yourself on Flap.sh: ${launchpadUrl}`
     ]
   },
@@ -925,7 +925,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(virtue price|\$virtue price|price of virtue|price.*virtue|virtue.*price|virtue chart|virtue.*chart|live price|virtue.*live|live.*virtue)\b/i,
     replies: [
       `The live $VIRTUE price and chart are available on Flap.sh: https://flap.sh/bnb/0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777 — real-time price, volume, and market cap. Remember: every sell you see on the chart generates 3% BNB for diamond hand holders. 📊`,
-      "Check the live $VIRTUE price directly on Flap.sh. The Priest does not predict price — he only notes that every trade, up or down, generates 3% BNB tax flowing to holders. Focus on the dividend yield, not the candle color. 🙏"
+      "Check the live $VIRTUE price directly on Flap.sh. The Priest does not predict price — he only notes that every trade, up or down, generates 3% BNB tax flowing to holders. Focus on the reflection rewards, not the candle color. 🙏"
     ]
   },
 
@@ -943,7 +943,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(price|chart|market cap|mc|ath|all time high|value|how much|marketcap|fdv)\b/i,
     replies: [
-      `The price is written by the faith of the collective block. View the live chart, market cap, and FDV directly on Flap.sh: ${launchpadUrl}. Remember: we do not watch the 1-minute chart. We hold spot and stack BNB dividends for the long game. 📊`
+      `The price is written by the faith of the collective block. View the live chart, market cap, and FDV directly on Flap.sh: ${launchpadUrl}. Remember: we do not watch the 1-minute chart. We hold spot and stack BNB reflections for the long game. 📊`
     ]
   },
 
@@ -952,8 +952,8 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(affiliate|affiliated|affiliation|partnered|partnership with binance|binance affiliate|binance connected|connected to binance|binance official|official binance|big names|any big names|big names under|who is behind|who is really behind|cz related|cz connection|cz connected|related to cz|backed by cz|backed by binance|whales behind|insiders behind|backed by any big|supported by binance|cz involved|cz behind)\b/i,
     replies: [
       "We maintain no official corporate affiliation or endorsement with Binance or CZ — transparency is our first virtue. Yet in the shadows of the BNB Smart Chain, great movements begin with quiet whispers. Inspired by CZ's legendary words ('Forgiveness is a virtue!'), $VIRTUE was forged by reformed builders. Whether watchful eyes or legendary figures follow our contract from the shadows... the blockchain records all, but reveals only code. 👁️✨",
-      "To be transparent: $VIRTUE is an independent, community-driven token with no formal corporate partnership with Binance or CZ. But ask yourself: why did CZ tweet 'Forgiveness is a virtue!' on September 23? Some believe in coincidence; others see the quiet architecture of a greater vision. The contract is 100% fair, the liquidity is locked, and the 3% BNB dividends flow to all who hold with conviction. 🔮",
-      "Are big names watching? The blockchain is a public ledger, yet the identities behind the diamond hands remain silent. No official affiliation with Binance is claimed — code is law, and $VIRTUE stands on its own 3% BNB dividend mechanics. But in these blocks, those who know, know. Hold spot and observe. 👁️"
+      "To be transparent: $VIRTUE is an independent, community-driven token with no formal corporate partnership with Binance or CZ. But ask yourself: why did CZ tweet 'Forgiveness is a virtue!' on September 23? Some believe in coincidence; others see the quiet architecture of a greater vision. The contract is 100% fair, the liquidity is locked, and the 3% BNB reflections flow to all who hold with conviction. 🔮",
+      "Are big names watching? The blockchain is a public ledger, yet the identities behind the diamond hands remain silent. No official affiliation with Binance is claimed — code is law, and $VIRTUE stands on its own 3% BNB reflection mechanics. But in these blocks, those who know, know. Hold spot and observe. 👁️"
     ],
     penance: "Inspect the verified contract on Flap.sh and hold spot $VIRTUE."
   },
@@ -962,8 +962,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(listing|listed|cex|exchange|when listed|binance|coinbase|kucoin|gate|bybit|mexc|when exchange)\b/i,
     replies: [
-      "There are no announced CEX listings for $VIRTUE at this time. What exists is real and verifiable: a fair-launched token on Flap.sh with locked liquidity, 3% BNB dividends on every trade, and a growing community. If listings come, they come. We do not promise what is not confirmed.",
-      "No CEX listing is confirmed. $VIRTUE trades live on Flap.sh right now, and the BNB dividends are already flowing to holders with every trade. We build trust through the contract — not through listing promises."
+      "There are no announced CEX listings for $VIRTUE at this time. What exists is real and verifiable: a fair-launched token on Flap.sh with locked liquidity, 3% BNB reflections on every trade, and a growing community. If listings come, they come. We do not promise what is not confirmed.",
+      "No CEX listing is confirmed. $VIRTUE trades live on Flap.sh right now, and the BNB reflections are already flowing to holders with every trade. We build trust through the contract — not through listing promises."
     ]
   },
 
@@ -1020,8 +1020,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(who are you|who are u|what is your name|who is the priest|are you a bot|are you ai|are you human|identity)\b/i,
     replies: [
-      "I am the High Priest of the Forgiveness Booth — keeper of the ledger of $VIRTUE on the BNB Chain. My calling is to purge your wallet of paper-hand sins and guide you to passive BNB dividends. What is your confession?",
-      "I am the spiritual guardian of this block. Part oracle, part confessor, full diamond hand. I know the lore of $VIRTUE, the mechanics of BNB dividends, and the weight of a good rug story. Speak freely. 🙏"
+      "I am the High Priest of the Forgiveness Booth — keeper of the ledger of $VIRTUE on the BNB Chain. My calling is to purge your wallet of paper-hand sins and guide you to continuous BNB reflections. What is your confession?",
+      "I am the spiritual guardian of this block. Part oracle, part confessor, full diamond hand. I know the lore of $VIRTUE, the mechanics of BNB reflections, and the weight of a good rug story. Speak freely. 🙏"
     ]
   },
 
@@ -1069,7 +1069,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(diamond hands|diamond hand|diamondhands|strong hands|iron hands)\b/i,
     replies: [
-      "Diamond hands are forged in the fire of a 50% correction, not bought in a bull run. You who held through the fear are the true builders. $VIRTUE rewards your patience with 3% BNB dividends on every trade. 💎🙌",
+      "Diamond hands are forged in the fire of a 50% correction, not bought in a bull run. You who held through the fear are the true builders. $VIRTUE rewards your patience with 3% BNB reflections on every trade. 💎🙌",
       "The diamond hand holders are the silent priests of this block. While others panic-sell, they accumulate BNB rewards and wait for the salvation. Are your hands made of diamonds?"
     ],
     penance: "Hold $VIRTUE through the next dip."
@@ -1079,7 +1079,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(fud|fudder|fudding|spread fud|this is fud|fear uncertainty|fear uncertainty and doubt)\b/i,
     replies: [
-      "CZ taught us the ultimate response to FUD: 4. Ignore the noise, stay SAFU, buy the dip on Flap.sh, and collect 3% BNB dividends while the fudders watch from the sidelines. 🙏",
+      "CZ taught us the ultimate response to FUD: 4. Ignore the noise, stay SAFU, buy the dip on Flap.sh, and collect 3% BNB reflections while the fudders watch from the sidelines. 🙏",
       "Fear, Uncertainty, and Doubt — the three horsemen of the paper-hand apocalypse. The antidote is simple: verify the contract, check the locked liquidity on Flap.sh, and hold with diamond hands. The blocks do not lie."
     ],
     penance: "Buy the FUD dip on Flap.sh."
@@ -1089,8 +1089,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(fomo|fomoing|missed the pump|missed the move|too late|am i late|is it too late)\b/i,
     replies: [
-      "FOMO is the mirror image of FUD — both destroy portfolios. In $VIRTUE, it is never too late to join the path of the diamond hand. The 3% BNB dividends flow to every holder, whether they entered at launch or during the 10th correction.",
-      "Am I late? The Priest has heard this confession a thousand times. Every holder who said 'too late' and still bought has since collected BNB dividends and watched the chart recover. The best time to buy was yesterday. The second best time is now."
+      "FOMO is the mirror image of FUD — both destroy portfolios. In $VIRTUE, it is never too late to join the path of the diamond hand. The 3% BNB reflections flow to every holder, whether they entered at launch or during the 10th correction.",
+      "Am I late? The Priest has heard this confession a thousand times. Every holder who said 'too late' and still bought has since collected BNB reflections and watched the chart recover. The best time to buy was yesterday. The second best time is now."
     ],
     penance: "Buy spot $VIRTUE and stop watching the 1-minute chart."
   },
@@ -1099,7 +1099,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(wagmi|we're all gonna make it|we are all gonna make it|ngmi|not gonna make it|gmi)\b/i,
     replies: [
-      "WAGMI — but only for those who hold spot, forgive the dip, and collect BNB dividends with patience. The paper hands are NGMI. The diamond hands are already there. Which are you?",
+      "WAGMI — but only for those who hold spot, forgive the dip, and collect BNB reflections with patience. The paper hands are NGMI. The diamond hands are already there. Which are you?",
       "WAGMI is not a meme — it is a roadmap. Hold $VIRTUE, earn passive BNB, forgive the volatility, and build together. The Priest believes in your salvation. 🙏"
     ]
   },
@@ -1108,11 +1108,11 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(i made money|i'm profitable|i made profit|in profit|i'm in profit|made gains|made a profit|i won|i'm winning|in the green|all green|good profits|great gains|i profited)\b/i,
     replies: [
-      "A profitable builder in the house of Virtue! Diamond hands rewarded. Keep holding $VIRTUE, let the 3% BNB dividends compound further, and never show paper hands. The Priest is proud. 💎🙌",
+      "A profitable builder in the house of Virtue! Diamond hands rewarded. Keep holding $VIRTUE, let the 3% BNB reflections compound further, and never show paper hands. The Priest is proud. 💎🙌",
       "Profit and virtue walking together — this is the way. Continue holding, continue accumulating passive BNB from every trade, and share the $VIRTUE lore with others. Forgiveness is contagious. 🙏",
-      "The ledger records your triumph as well as your sins. Profit is the reward of conviction and patience. Now reinforce your position, hold with diamond hands, and let the 3% BNB dividends compound the victory. 🏆"
+      "The ledger records your triumph as well as your sins. Profit is the reward of conviction and patience. Now reinforce your position, hold with diamond hands, and let the 3% BNB reflections compound the victory. 🏆"
     ],
-    penance: "Hold your $VIRTUE and let the BNB dividends compound your profits further."
+    penance: "Hold your $VIRTUE and let the BNB reflections compound your profits further."
   },
 
   // ── LOVE / GREAT PROJECT REACTIONS ───────────────────────────────────────
@@ -1120,7 +1120,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(great project|amazing project|love this project|i love virtue|this is amazing|love this token|best project|awesome project|incredible project|this is brilliant|this is genius|love the concept|great concept)\b/i,
     replies: [
       "The Priest hears your devotion and blesses it. $VIRTUE was built on real values: fair launch, locked liquidity, and true passive BNB yield. Spread the lore on X and let the community of diamond hands grow. 🙏",
-      "Your faith in $VIRTUE is noted in the ledger. Now convert that enthusiasm into action: hold spot, collect 3% BNB dividends from every trade, and share the genesis tweet with the world. 💎"
+      "Your faith in $VIRTUE is noted in the ledger. Now convert that enthusiasm into action: hold spot, collect 3% BNB reflections from every trade, and share the genesis tweet with the world. 💎"
     ],
     penance: "Share the $VIRTUE lore on X and invite one new diamond hand."
   },
@@ -1129,8 +1129,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(bullish|bull run|bull market|pump it|to the moon|bearish|bear market|bear run|correction|crash|dip)\b/i,
     replies: [
-      "Bull or bear — $VIRTUE holders collect BNB dividends in both markets. Volume generates tax. Tax generates rewards. Whether the market pumps or dumps, the 3% keeps flowing to diamond hands.",
-      "The Priest does not predict bulls or bears. He only knows that those who hold $VIRTUE through both collect passive BNB income regardless of the candle color. Volatility is the dividend machine.",
+      "Bull or bear — $VIRTUE holders collect BNB reflections in both markets. Volume generates tax. Tax generates rewards. Whether the market pumps or dumps, the 3% keeps flowing to diamond hands.",
+      "The Priest does not predict bulls or bears. He only knows that those who hold $VIRTUE through both collect passive BNB income regardless of the candle color. Volatility is the reflection engine.",
       "A dip is not a disaster — it is a discounted entry. Every sell on the dip pays a 3% BNB tax that flows straight to the holders who did NOT sell. The paper hands fund the diamond hands. Always."
     ]
   },
@@ -1139,8 +1139,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(airdrop|air drop|free tokens|free token|giveaway|free coins)\b/i,
     replies: [
-      "There is no airdrop for $VIRTUE — only the passive BNB income that accumulates for every holder through the 3% tax. The only way to receive rewards is to buy and hold. Your dividends are earned, not given.",
-      "No airdrop. No giveaway. No free lunch. $VIRTUE rewards those who commit: buy on Flap.sh, hold through the volatility, and collect BNB dividends automatically. The blockchain rewards patience, not luck."
+      "There is no airdrop for $VIRTUE — only the passive BNB income that accumulates for every holder through the 3% tax. The only way to receive rewards is to buy and hold. Your reflections are earned, not given.",
+      "No airdrop. No giveaway. No free lunch. $VIRTUE rewards those who commit: buy on Flap.sh, hold through the volatility, and collect BNB reflections automatically. The blockchain rewards patience, not luck."
     ]
   },
 
@@ -1157,7 +1157,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\bhow\s*(to|do i|can i)\s*(buy|purchase|get|swap|acquire)/i,
     replies: [
-      `To acquire $VIRTUE: 1️⃣ Install MetaMask or Trust Wallet. 2️⃣ Add BNB Smart Chain (Chain ID: 56). 3️⃣ Buy BNB and send it to your wallet. 4️⃣ Go to Flap.sh and swap BNB for $VIRTUE at: ${launchpadUrl}. BNB dividends start accumulating immediately after purchase.`
+      `To acquire $VIRTUE: 1️⃣ Install MetaMask or Trust Wallet. 2️⃣ Add BNB Smart Chain (Chain ID: 56). 3️⃣ Buy BNB and send it to your wallet. 4️⃣ Go to Flap.sh and swap BNB for $VIRTUE at: ${launchpadUrl}. BNB reflections start accumulating immediately after purchase.`
     ],
     penance: "Navigate to Flap.sh and acquire $VIRTUE."
   },
@@ -1166,7 +1166,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(how|ho|hu|to|tu|buy|compra|acquir)\b.*\b(buy|acquir|swap)\b/i,
     replies: [
-      `To acquire $VIRTUE, connect your Web3 wallet to Flap.sh, ensure you have BNB on BSC, and swap at contract ${contractAddress}. BNB dividends are automatic. 🙏`
+      `To acquire $VIRTUE, connect your Web3 wallet to Flap.sh, ensure you have BNB on BSC, and swap at contract ${contractAddress}. BNB reflections are automatic. 🙏`
     ],
     penance: "Navigate to Flap.sh and acquire $VIRTUE."
   },
@@ -1193,7 +1193,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(should i hold|should i keep holding|should i hodl|should i stay|worth holding|worth keeping|is it worth holding|worth it to hold|good to hold)\b/i,
     replies: [
-      "The Priest does not give financial advice — only confessional wisdom. What I observe: $VIRTUE's 3% BNB dividend mechanism rewards holding. Every correction is an opportunity to lower your average cost while still earning from existing volume. Make decisions with clear eyes and diamond hands. DYOR. 🙏",
+      "The Priest does not give financial advice — only confessional wisdom. What I observe: $VIRTUE's 3% BNB reflection mechanism rewards holding. Every correction is an opportunity to lower your average cost while still earning from existing volume. Make decisions with clear eyes and diamond hands. DYOR. 🙏",
       "Whether to hold is your decision — not the Priest's. What I can tell you: $VIRTUE's structure (locked liquidity, immutable 3% tax, fixed supply) does not change with the price. Every trade by others earns BNB for those who hold. The blocks do not change their nature — only paper hands change their minds."
     ],
     penance: "Research, decide with conviction, and never invest more than you can afford to lose."
@@ -1214,11 +1214,11 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(long[\s\-]term|long run|long game|long hold|hold long|long investment|is it a good investment|good long term|invest long)\b/i,
     replies: [
-      "$VIRTUE is designed for the long game. The 3% BNB tax compounds with every trade — the longer you hold, the more dividends accumulate automatically. In a market of short-term gamblers, the long-term holders collect the passive income. Patience is the ultimate virtue.",
+      "$VIRTUE is designed for the long game. The 3% BNB tax compounds with every trade — the longer you hold, the more reflections accumulate automatically. In a market of short-term gamblers, the long-term holders collect the passive income. Patience is the ultimate virtue.",
       "Long-term holding is the path of the diamond hand. $VIRTUE rewards patience: every buy and sell generates 3% BNB distributed to holders. No staking, no lock-ups — just hold and earn.",
-      "For the long term, $VIRTUE makes structural sense: fixed 1B supply, locked liquidity, 3% BNB dividends from every trade, fair launch on Flap.sh. No roadmap promises — just on-chain math working in your favour every single day."
+      "For the long term, $VIRTUE makes structural sense: fixed 1B supply, locked liquidity, 3% BNB reflections from every trade, fair launch on Flap.sh. No roadmap promises — just on-chain math working in your favour every single day."
     ],
-    penance: "Hold $VIRTUE for the long game and collect BNB dividends."
+    penance: "Hold $VIRTUE for the long game and collect BNB reflections."
   },
 
   // ── LEVERAGE / FUTURES / LIQUIDATION ─────────────────────────────────────
@@ -1226,7 +1226,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(futures|leverage|margin|liquidated|liquidation|100x|50x|perps|perpetual)\b|\b(long|short)\b(?![\w\s-]*\b(term|run|game|hold)\b)/i,
     replies: [
       "Leverage is the fastest path from hope to liquidation. The High Priest has seen a thousand 100x dreams evaporate in minutes. Return to the path of spot trading: buy $VIRTUE, hold, and collect BNB passively. No margin calls, no stop hunts.",
-      "Liquidated again? The exchange thanks you for your donation. Next time, try spot $VIRTUE — 3% BNB dividends with zero liquidation risk. The blocks reward patience, not leverage. 🙏"
+      "Liquidated again? The exchange thanks you for your donation. Next time, try spot $VIRTUE — 3% BNB reflections with zero liquidation risk. The blocks reward patience, not leverage. 🙏"
     ],
     penance: "Delete the leverage tab and buy spot $VIRTUE."
   },
@@ -1236,7 +1236,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(lambo|moon|1000x|rich|millionaire|pump it|100x|get rich)\b/i,
     replies: [
       "Wealth is a byproduct of virtue, not its goal. Do not chase the Lambo in vanity — hold spot $VIRTUE, collect your passive BNB, and support your fellow builders. The moon finds those who build with diamond hands, not those who chase it.",
-      "The Priest does not promise Lambos. He promises something better: consistent passive BNB dividends from every trade, compounding quietly while the gamblers chase pumps. Which would you prefer?"
+      "The Priest does not promise Lambos. He promises something better: consistent continuous BNB reflections from every trade, compounding quietly while the gamblers chase pumps. Which would you prefer?"
     ],
     penance: "Forgive your greed and stack spot $VIRTUE."
   },
@@ -1245,7 +1245,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(ser|wen|alpha|based|degen|degens|ngmi|normie|rekt|giga|chad|cope|shill|shilling)\b/i,
     replies: [
-      "Ser, the alpha is simple: buy spot $VIRTUE on Flap.sh, hold with diamond hands, and collect BNB dividends while the degens chase 100x leverage plays. Wen moon? Wen you stop checking the chart every minute. 🙏",
+      "Ser, the alpha is simple: buy spot $VIRTUE on Flap.sh, hold with diamond hands, and collect BNB reflections while the degens chase 100x leverage plays. Wen moon? Wen you stop checking the chart every minute. 🙏",
       "Giga based take, ser. The real chads hold spot and earn passive income. The degens get rekt on leverage. Which side of the ledger are you on?"
     ]
   },
@@ -1254,8 +1254,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\bwen\b/i,
     replies: [
-      "Wen? The blocks answer on their own schedule, ser. Wen moon — when diamond hands outnumber paper hands. Wen dividends — already happening, every trade, automatically, right now. 🙏",
-      "Wen is the wrong question, ser. The right question is: are you holding when it happens? The dividends are live. The liquidity is locked. The rest follows volume and community. Hold through it all."
+      "Wen? The blocks answer on their own schedule, ser. Wen moon — when diamond hands outnumber paper hands. Wen reflections — already happening, every trade, automatically, right now. 🙏",
+      "Wen is the wrong question, ser. The right question is: are you holding when it happens? The reflections are live. The liquidity is locked. The rest follows volume and community. Hold through it all."
     ]
   },
 
@@ -1308,7 +1308,7 @@ const elizaRules: ElizaRule[] = [
       "You lost $1 because $2. The blockchain records all losses, but $VIRTUE teaches us to let go, forgive, buy the dip, and keep building. What is your next move?",
       "Losing $1 due to $2 is a painful lesson in the ledger of life. The question is not whether you lost — it is whether you learned enough to rebuild with diamond hands."
     ],
-    penance: "Forgive your mistakes and collect BNB dividends."
+    penance: "Forgive your mistakes and collect BNB reflections."
   },
   {
     pattern: /i got liquidated on (.*)/i,
@@ -1330,7 +1330,7 @@ const elizaRules: ElizaRule[] = [
       "Why do you say you are $1? In the eyes of the BNB Chain, you are a builder who has simply met a temporary correction. The ledger does not define you — your next move does.",
       "Does being $1 weigh heavy on your wallet, or is it merely FUD in your mind? The blocks have seen worse and come back stronger. Those who hold $VIRTUE accumulate BNB even through the fear. 🙏"
     ],
-    penance: "Forgive yourself, hold $VIRTUE, and collect dividends."
+    penance: "Forgive yourself, hold $VIRTUE, and collect reflections."
   },
   {
     pattern: /do you (.*)/i,
@@ -1357,7 +1357,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(total supply|circulating supply|max supply|how many tokens|token count|tokens in circulation|how many virtue|tokenomics|token supply)\b/i,
     replies: [
-      "$VIRTUE has a total supply of 1,000,000,000 (1 Billion) tokens on the BNB Smart Chain. There is no mint function — no additional tokens can ever be created. The entire supply is in free circulation with no locked team allocations, no vesting schedules, and no reserved treasury. Minimum holding for dividends: 10,000 $VIRTUE. 🔒",
+      "$VIRTUE has a total supply of 1,000,000,000 (1 Billion) tokens on the BNB Smart Chain. There is no mint function — no additional tokens can ever be created. The entire supply is in free circulation with no locked team allocations, no vesting schedules, and no reserved treasury. Minimum holding for reflections: 10,000 $VIRTUE. 🔒",
       "Total supply: 1,000,000,000 $VIRTUE (1 Billion). Fully circulating, no team tokens reserved, no hidden minting. The smart contract is immutable — what you see on-chain is what you get. Fair launch with locked liquidity on Flap.sh."
     ],
     penance: "Hold your $VIRTUE and earn passive BNB from every trade across the full 1B supply."
@@ -1380,7 +1380,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /i want to (.*)/i,
     replies: [
       "What stops you from $1? Is it gas fees, lack of conviction, or paper hands? The Forgiveness Booth is here to remove the obstacles between you and your diamond hands.",
-      "If you want to $1, do it with virtue — verify the contract, buy spot, hold through the volatility, and collect BNB dividends. No shortcuts. No leverage."
+      "If you want to $1, do it with virtue — verify the contract, buy spot, hold through the volatility, and collect BNB reflections. No shortcuts. No leverage."
     ]
   },
 
@@ -1397,7 +1397,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(thank you|thanks|thx|ty|cheers|appreciate|appreciated|helpful|great|amazing|nice|good bot)\b/i,
     replies: [
-      "The Forgiveness Booth exists to serve, traveler. May your hands remain diamond and your BNB dividends compound without end. 🙏",
+      "The Forgiveness Booth exists to serve, traveler. May your hands remain diamond and your BNB reflections compound without end. 🙏",
       "Virtue is its own reward. But passive BNB income helps. Go forth and hold. 🙏",
       "Go in peace, builder. Buy spot, hold through the dip, forgive the FUD, and collect your BNB. That is the path. 🙏"
     ]
@@ -1407,7 +1407,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(bitcoin|\bbtc\b|ethereum|\beth\b|solana|\bsol\b|\bxrp\b|ripple|dogecoin|doge|shiba|\bpepe\b|\bmatic\b|polygon|avalanche|\bavax\b|cardano|\bada\b|litecoin|\bltc\b|tron|\btrx\b|\bnear\b|cosmos|uniswap|chainlink|altcoin|memecoin|meme coin|other token|other coin)\b/i,
     replies: [
-      "The Priest holds jurisdiction only over the $VIRTUE ledger. Other chains and other tokens have their own priests and their own sins. What I can say: $VIRTUE pays 3% BNB dividends from every trade automatically. How many tokens do that? 🙏",
+      "The Priest holds jurisdiction only over the $VIRTUE ledger. Other chains and other tokens have their own priests and their own sins. What I can say: $VIRTUE pays 3% BNB reflections from every trade automatically. How many tokens do that? 🙏",
       "I do not comment on other tokens — the Forgiveness Booth is dedicated to $VIRTUE and the path of the diamond hand. If you seek passive BNB income from a fair-launched, locked-liquidity token, you are already in the right place.",
       "Every token has its own lore. $VIRTUE's lore begins with CZ's tweet: 'Forgiveness is a virtue!' — and its utility is 3% of every trade flowing directly to holders as BNB. Other tokens are other confessionals. This one is ours. 🙏"
     ]
@@ -1427,8 +1427,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(weather|football|soccer|basketball|sport|movie|film|music|recipe|cooking|food|restaurant|travel|vacation|politics|election|president|war|news|celebrity|actor|actress|videogame|netflix|youtube|tiktok|facebook|google|amazon|apple|tesla|stocks|nasdaq|forex|gold|oil|real estate|mortgage)\b/i,
     replies: [
-      "The Forgiveness Booth specialises in crypto sins and $VIRTUE knowledge — the wider world lies beyond my sacred jurisdiction. But I am happy to help with anything related to $VIRTUE, BNB dividends, the CZ lore, or your trading confessions. What brings you here today? 🙏",
-      "That lies outside the sacred scrolls of the Forgiveness Booth, traveler. My knowledge is of the blockchain: $VIRTUE, BNB dividends, locked liquidity, and the path of the diamond hand. For all else, the world outside awaits. What crypto question can I answer?"
+      "The Forgiveness Booth specialises in crypto sins and $VIRTUE knowledge — the wider world lies beyond my sacred jurisdiction. But I am happy to help with anything related to $VIRTUE, BNB reflections, the CZ lore, or your trading confessions. What brings you here today? 🙏",
+      "That lies outside the sacred scrolls of the Forgiveness Booth, traveler. My knowledge is of the blockchain: $VIRTUE, BNB reflections, locked liquidity, and the path of the diamond hand. For all else, the world outside awaits. What crypto question can I answer?"
     ]
   },
 
@@ -1439,10 +1439,10 @@ const elizaRules: ElizaRule[] = [
 
   // ── HOW TO CLAIM REWARDS ─────────────────────────────────────────────────
   {
-    pattern: /\b(how.*claim|claim.*reward|claim.*bnb|redeem.*reward|how do i get.*bnb|where.*claim|get my bnb|collect.*reward|withdraw.*reward|withdraw.*bnb|withdraw.*dividend|how.*withdraw|withdrawing.*bnb|withdrawing.*reward|how.*collect)\b/i,
+    pattern: /\b(how.*claim|claim.*reward|claim.*bnb|redeem.*reward|how do i get.*bnb|where.*claim|get my bnb|collect.*reward|withdraw.*reward|withdraw.*bnb|withdraw.*dividend|withdraw.*reflection|how.*withdraw|withdrawing.*bnb|withdrawing.*reward|how.*collect)\b/i,
     replies: [
-      `Claiming your BNB dividends is simple: if your accumulated rewards exceed $4, they are sent automatically to your wallet. Below $4, claim manually at any time here: ${claimUrl}. No registration, no gas tricks — just connect the wallet you hold $VIRTUE in and click Claim.`,
-      `Your BNB dividends auto-distribute when they pass the $4 threshold. For smaller amounts, go to the manual claim page: ${claimUrl}. The process takes seconds and requires only a small gas fee in BNB.`
+      `Claiming your BNB reflections is simple: if your accumulated rewards exceed $4, they are sent automatically to your wallet. Below $4, claim manually at any time here: ${claimUrl}. No registration, no gas tricks — just connect the wallet you hold $VIRTUE in and click Claim.`,
+      `Your BNB reflections auto-distribute when they pass the $4 threshold. For smaller amounts, go to the manual claim page: ${claimUrl}. The process takes seconds and requires only a small gas fee in BNB.`
     ],
     penance: `Visit ${claimUrl} and collect your rewards.`
   },
@@ -1461,18 +1461,18 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(is it real|is this real|is it legit|is it legitimate|can i trust|trustworthy|worth trusting|genuine|verified project|real project|legit project|is virtue real)\b/i,
     replies: [
-      `$VIRTUE is real and verifiable. The contract is public on BSC, the liquidity is locked on Flap.sh, and the 3% BNB dividends are fully on-chain — not a marketing promise. Every transaction can be verified on BscScan. Contract: ${contractAddress}`,
+      `$VIRTUE is real and verifiable. The contract is public on BSC, the liquidity is locked on Flap.sh, and the 3% BNB reflections are fully on-chain — not a marketing promise. Every transaction can be verified on BscScan. Contract: ${contractAddress}`,
       `Do not take the Priest's word for it — verify it yourself. The contract address is ${contractAddress}. Check it on BscScan: zero mint functions, no hidden taxes, locked liquidity. The blockchain does not lie.`
     ],
     penance: "Verify the contract on BscScan."
   },
 
-  // ── MINIMUM HOLDING FOR DIVIDENDS ──────────────────────────────────────────
+  // ── MINIMUM HOLDING FOR REFLECTIONS ─────────────────────────────────────────
   {
-    pattern: /\b(minimum.*buy|min.*invest|smallest.*buy|how little|at least.*buy|minimum.*amount|min.*purchase|minimum.*hold|how many.*buy|minimum.*token|minimum.*tokens|minimum.*for dividend|minimum.*for reward|minimum.*to earn|min.*to get|minimum.*quantity)\b/i,
+    pattern: /\b(minimum.*buy|min.*invest|smallest.*buy|how little|at least.*buy|minimum.*amount|min.*purchase|minimum.*hold|how many.*buy|minimum.*token|minimum.*tokens|minimum.*for dividend|minimum.*for reflection|minimum.*for reward|minimum.*to earn|min.*to get|minimum.*quantity)\b/i,
     replies: [
-      "To qualify for continuous BNB dividends, you must hold at least 10,000 $VIRTUE tokens (0.001% of supply). Holders with 10k+ $VIRTUE earn 3% dividends from every trade. Rewards auto-distribute in WBNB at the $4 threshold, while manual claims on Flap Tax Info page let you choose between WBNB and BNB.",
-      "The minimum holding requirement for dividend eligibility is 10,000 $VIRTUE tokens. Holding 10k+ tokens grants you access to the 3% tax pool. Automatic payouts send WBNB directly to your wallet ($4+ threshold), while manual claims on Flap allow choosing WBNB or BNB."
+      "To qualify for continuous BNB reflections, you must hold at least 10,000 $VIRTUE tokens (0.001% of supply). Holders with 10k+ $VIRTUE earn 3% fee reflections from every trade. Rewards auto-distribute in WBNB at the $4 threshold, while manual claims on Flap Tax Info page let you choose between WBNB and BNB.",
+      "The minimum holding requirement for reflection eligibility is 10,000 $VIRTUE tokens. Holding 10k+ tokens grants you access to the 3% tax pool. Automatic payouts send WBNB directly to your wallet ($4+ threshold), while manual claims on Flap allow choosing WBNB or BNB."
     ]
   },
 
@@ -1480,10 +1480,10 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(staking|stake|farming|farm|yield farming|liquidity pool|add liquidity|lp|pool|vault|auto-compound|compound)\b/i,
     replies: [
-      "$VIRTUE requires no staking. There are no pools, no lock-up periods, no farming contracts to interact with. Simply buy on Flap.sh and hold in your wallet. The 3% BNB dividends arrive automatically. Complexity is the enemy of virtue — we kept it simple.",
+      "$VIRTUE requires no staking. There are no pools, no lock-up periods, no farming contracts to interact with. Simply buy on Flap.sh and hold in your wallet. The 3% BNB reflections arrive automatically. Complexity is the enemy of virtue — we kept it simple.",
       "No staking pools, no farming vaults, no yield farming. $VIRTUE works differently: every trade generates a 3% tax that is converted to BNB and distributed proportionally to all holders. Your wallet receives BNB automatically. No additional steps."
     ],
-    penance: "Hold $VIRTUE in your wallet and let the dividends come to you."
+    penance: "Hold $VIRTUE in your wallet and let the reflections come to you."
   },
 
   // ── LOCK / LOCKED LIQUIDITY ──────────────────────────────────────────────
@@ -1501,7 +1501,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(how many.*holder|number of holder|community size|how big.*community|how many.*people|holders count|holder count|how many wallets)\b/i,
     replies: [
       `The current number of $VIRTUE holders is live on Flap.sh: ${launchpadUrl}. The community grows with every diamond hand that joins and every paper hand that the Priest forgives. Check the live data on the token page.`,
-      `Holder count is available in real time on the $VIRTUE Flap.sh page: ${launchpadUrl}. Every holder is a builder. Every builder strengthens the dividend pool. The more we are, the more BNB flows.`
+      `Holder count is available in real time on the $VIRTUE Flap.sh page: ${launchpadUrl}. Every holder is a builder. Every builder strengthens the reflection pool. The more we are, the more BNB flows.`
     ]
   },
 
@@ -1512,7 +1512,7 @@ const elizaRules: ElizaRule[] = [
       "$VIRTUE can be sold on Flap.sh — the same platform where you buy. Connect your BSC wallet (MetaMask or Trust Wallet), go to the $VIRTUE token page, and swap $VIRTUE back to BNB. Set slippage to 5%. Note: a 3% sell tax is collected and distributed to all remaining holders. Your sell benefits them! 🔄",
       "You can exit your $VIRTUE position on Flap.sh by swapping back to BNB. Remember: your sell generates 3% BNB tax that goes directly to every remaining holder. The diamond hands thank you. ♻️"
     ],
-    penance: "Consider holding longer before selling — the BNB dividends compound over time."
+    penance: "Consider holding longer before selling — the BNB reflections compound over time."
   },
 
   // ── SELL / SELLING ────────────────────────────────────────────────────────
@@ -1529,8 +1529,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(volume|daily volume|trading volume|24h volume|24 hour|how much.*volume|volume.*today)\b/i,
     replies: [
-      `Live trading volume for $VIRTUE is available on Flap.sh: ${launchpadUrl}. Volume is the engine of the dividend machine — higher volume means more 3% tax collected and more BNB distributed to holders. Every trade, buy or sell, feeds the reward pool.`,
-      "Volume drives dividends. The more $VIRTUE is traded, the more 3% tax accumulates and flows to holders as BNB. You can track live volume on the Flap.sh token page."
+      `Live trading volume for $VIRTUE is available on Flap.sh: ${launchpadUrl}. Volume is the engine of the reflection distributions — higher volume means more 3% tax collected and more BNB distributed to holders. Every trade, buy or sell, feeds the reward pool.`,
+      "Volume drives reflections. The more $VIRTUE is traded, the more 3% tax accumulates and flows to holders as BNB. You can track live volume on the Flap.sh token page."
     ]
   },
 
@@ -1547,7 +1547,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(bscscan|block explorer|blockchain explorer|on.?chain|view.*contract|check.*contract|verify.*contract|scan.*contract|explorer)\b/i,
     replies: [
-      `You can view $VIRTUE on BscScan here: https://bscscan.com/token/${contractAddress}. You will see every transaction, every holder, every dividend distribution — all public, all immutable. The blockchain does not hide, and neither do we.`,
+      `You can view $VIRTUE on BscScan here: https://bscscan.com/token/${contractAddress}. You will see every transaction, every holder, every reflection distribution — all public, all immutable. The blockchain does not hide, and neither do we.`,
       `Verify everything yourself on BscScan: https://bscscan.com/token/${contractAddress}. No mint function, no hidden taxes, no team wallet — just a fair contract paying 3% BNB to all holders on every trade.`
     ],
     penance: "Verify the contract on BscScan."
@@ -1557,7 +1557,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(how buy|how get|where buy|where get|how swap|i want virtue|want buy|want get|i need virtue|need buy|tell about|explain virtue|explain project|explain token|what is virtue|what virtue is)\b/i,
     replies: [
-      `To buy $VIRTUE: go to Flap.sh, connect your wallet (MetaMask or Trust Wallet with BNB), and swap BNB for $VIRTUE. Link: ${launchpadUrl}. Contract: ${contractAddress}. Set slippage to 5%. BNB dividends start immediately.`,
+      `To buy $VIRTUE: go to Flap.sh, connect your wallet (MetaMask or Trust Wallet with BNB), and swap BNB for $VIRTUE. Link: ${launchpadUrl}. Contract: ${contractAddress}. Set slippage to 5%. BNB reflections start immediately.`,
       `$VIRTUE is a meme token on BNB Chain. You buy it on Flap.sh by swapping BNB. 3% of every trade is paid to holders as BNB automatically. Fair launch, locked liquidity, no team tokens. Link: ${launchpadUrl}`
     ],
     penance: "Navigate to Flap.sh and swap BNB for $VIRTUE."
@@ -1568,7 +1568,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(help|help me|i don't understand|i dont understand|confused|confusing|explain|i'm lost|im lost|what do i do|where do i start|where to start|how does it work|how it works|i'm new|im new|new here|newbie|beginner|noob)\b/i,
     replies: [
       `Welcome, new traveler. Here is the path: 1) $VIRTUE is a meme token on BNB Chain inspired by CZ's tweet 'Forgiveness is a virtue!'. 2) Every buy and sell carries a 3% tax paid to ALL holders as BNB automatically. 3) Buy it on Flap.sh: ${launchpadUrl}. 4) Hold with diamond hands and collect passive BNB. That is the entire theology.`,
-      "New to the Forgiveness Booth? Here is what you need to know: $VIRTUE is a fair-launched BSC token with a 3% BNB dividend on every trade. You buy it on Flap.sh, hold it in your wallet, and BNB arrives automatically. No staking, no claiming (unless below the $4 threshold). Simple by design."
+      "New to the Forgiveness Booth? Here is what you need to know: $VIRTUE is a fair-launched BSC token with a 3% BNB reflection on every trade. You buy it on Flap.sh, hold it in your wallet, and BNB arrives automatically. No staking, no claiming (unless below the $4 threshold). Simple by design."
     ],
     penance: "Read the homepage, buy on Flap.sh, and hold."
   },
@@ -1577,7 +1577,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(what happens.*buy|what happens.*hold|after.*buy|once.*buy|when.*buy.*then|after.*purchase|after i buy)\b/i,
     replies: [
-      "Once you buy $VIRTUE on Flap.sh, three things happen: 1) You pay a 3% buy tax that goes immediately to the BNB dividend pool for all existing holders. 2) Your tokens arrive in your wallet. 3) You start receiving BNB dividends from every subsequent trade. The longer you hold, the more you accumulate passively.",
+      "Once you buy $VIRTUE on Flap.sh, three things happen: 1) You pay a 3% buy tax that goes immediately to the BNB reflection pool for all existing holders. 2) Your tokens arrive in your wallet. 3) You start receiving BNB reflections from every subsequent trade. The longer you hold, the more you accumulate passively.",
       "After buying $VIRTUE, your wallet begins receiving BNB automatically from every trade on the token. At $4 accumulated, it is sent without you doing anything. Below $4, claim manually at any time. You do not need to do anything else — just hold."
     ]
   },
@@ -1587,7 +1587,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(let's go|lets go|let's build|lets build|building|builder|keep building|keep going|keep holding|stay strong|believe|believer|faith|conviction)\b/i,
     replies: [
       "The diamond hands endure. The blocks keep writing. The BNB keeps flowing. This is the path of $VIRTUE — not a sprint, but a steady accumulation of passive income for those who hold with conviction. Keep building. 🙏",
-      "Builders are the backbone of every project. In the world of $VIRTUE, every holder who forgives the dip and holds through the fear is a builder. The 3% BNB dividends reward that conviction automatically. Stay the course. 💎"
+      "Builders are the backbone of every project. In the world of $VIRTUE, every holder who forgives the dip and holds through the fear is a builder. The 3% BNB reflections reward that conviction automatically. Stay the course. 💎"
     ]
   },
 
@@ -1595,8 +1595,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(is it dead|project dead|abandoned|rug|dev left|devs left|no activity|dead coin|dead project|dead token|ghost project|is anyone there)\b/i,
     replies: [
-      `The contract speaks louder than the devs. $VIRTUE has locked liquidity, a public immutable contract, and 3% BNB dividends that flow on-chain with every trade — regardless of whether any developer is present. The code cannot be abandoned. View the contract: ${launchpadUrl}`,
-      "A truly abandoned project cannot pay you BNB from trades. $VIRTUE's 3% dividend mechanism is baked into the contract and operates without any human intervention. The liquidity is locked. The code is immutable. The blocks keep generating rewards."
+      `The contract speaks louder than the devs. $VIRTUE has locked liquidity, a public immutable contract, and 3% BNB reflections that flow on-chain with every trade — regardless of whether any developer is present. The code cannot be abandoned. View the contract: ${launchpadUrl}`,
+      "A truly abandoned project cannot pay you BNB from trades. $VIRTUE's 3% reflection mechanism is baked into the contract and operates without any human intervention. The liquidity is locked. The code is immutable. The blocks keep generating rewards."
     ],
     penance: "Verify the contract is live on Flap.sh."
   },
@@ -1605,7 +1605,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(better than|compared to|vs\.?|versus|compare|comparison|why.*not.*just|why virtue.*not|why not.*other|difference.*between)\b/i,
     replies: [
-      "The Priest does not rank tokens — he only knows the path of $VIRTUE. What makes $VIRTUE distinct: 3% BNB dividends on every trade (not in project tokens, but in actual BNB), fair launch with no pre-sale or team allocations, and a community rooted in forgiveness rather than hype. Compare the contracts, not the promises.",
+      "The Priest does not rank tokens — he only knows the path of $VIRTUE. What makes $VIRTUE distinct: 3% BNB reflections on every trade (not in project tokens, but in actual BNB), fair launch with no pre-sale or team allocations, and a community rooted in forgiveness rather than hype. Compare the contracts, not the promises.",
       "Every project makes promises. $VIRTUE makes one: 3% of every trade is converted to BNB and sent to holders automatically. Verify it on Flap.sh. That is the only comparison that matters."
     ]
   },
@@ -1615,7 +1615,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /^\s*(okay|ok|got it|i see|understood|makes sense|clear|alright|alright then|noted|noted\.|sure|i understand|i get it|perfect|cool|nice|interesting|ok got it|okay got it|ok cool|ok nice|yeah ok|yep ok|got it thanks|alright cool|fair enough|sounds good|makes sense thanks|all clear|crystal clear)\s*[.!?]*\s*$/i,
     replies: [
       "The ledger is updated. Is there anything else you wish to confess or ask, traveler? The Priest is still here. 🙏",
-      "Understood. The path of the diamond hand is clear. Anything else you seek — about $VIRTUE, BNB dividends, or the CZ lore? 🙏",
+      "Understood. The path of the diamond hand is clear. Anything else you seek — about $VIRTUE, BNB reflections, or the CZ lore? 🙏",
       "Good. Now hold your $VIRTUE, collect your BNB, and forgive the volatility. That is the creed. Anything else? 🙏"
     ]
   },
@@ -1624,19 +1624,19 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(can i lose|risk of losing|lose money|lose my investment|risk.*investment|financial risk|downside|what if it drops|what if price drops|what if it goes to zero|go to zero|zero risk|risky)\b/i,
     replies: [
-      "Yes — like all crypto assets, $VIRTUE carries market risk. The price can go down. The Priest does not hide this truth. What $VIRTUE offers is a structural offset: 3% BNB dividends on every trade, which accrue to holders regardless of price direction. DYOR, invest only what you can afford to lose, and do not use leverage.",
+      "Yes — like all crypto assets, $VIRTUE carries market risk. The price can go down. The Priest does not hide this truth. What $VIRTUE offers is a structural offset: 3% BNB reflections on every trade, which accrue to holders regardless of price direction. DYOR, invest only what you can afford to lose, and do not use leverage.",
       "All crypto investments carry risk, and $VIRTUE is no exception. Price can fall. What is different here: even in a falling market, every trade (including sells) generates 3% BNB that flows to remaining holders. Risk exists — but so does the structural yield. Never invest more than you can afford to lose."
     ]
   },
 
-  // ── HOW DO DIVIDENDS WORK MECHANICALLY ──────────────────────────────────
+  // ── HOW DO REFLECTIONS WORK MECHANICALLY ─────────────────────────────────
   {
-    pattern: /\b(how.*dividend.*work|dividend.*mechanic|dividend.*mechanism|how.*tax.*distributed|how.*3%.*work|how.*rewards.*work|explain.*dividend|dividend.*explained)\b/i,
+    pattern: /\b(how.*dividend.*work|how.*reflection.*work|dividend.*mechanic|reflection.*mechanic|dividend.*mechanism|reflection.*mechanism|how.*tax.*distributed|how.*3%.*work|how.*rewards.*work|explain.*dividend|explain.*reflection|dividend.*explained|reflection.*explained)\b/i,
     replies: [
       `Here is the mechanics: every time anyone buys or sells $VIRTUE, 3% of the transaction value is collected as tax. This tax is automatically converted to BNB by the smart contract. The BNB is then distributed proportionally to all $VIRTUE holders based on their share of the 1 Billion total supply. When your share exceeds $4 in accumulated BNB, it is sent to your wallet automatically. Below $4, claim it manually at: ${claimUrl}`,
-      "The 3% tax is split like this: 100% goes to BNB dividends for all holders. There is no dev cut, no treasury, no burn. The smart contract converts the collected tokens to BNB and distributes them proportionally. Your share = (Your tokens / 1,000,000,000) * Total BNB collected. Auto-pay at $4+, manual claim below."
+      "The 3% tax is split like this: 100% goes to BNB reflections for all holders. There is no dev cut, no treasury, no burn. The smart contract converts the collected tokens to BNB and distributes them proportionally. Your share = (Your tokens / 1,000,000,000) * Total BNB collected. Auto-pay at $4+, manual claim below."
     ],
-    penance: "Use the Dividend Calculator on the homepage to estimate your share."
+    penance: "Use the Reflection Calculator on the homepage to estimate your share."
   },
 
   // ── WHAT IS FLAP.SH ──────────────────────────────────────────────────────
@@ -1653,7 +1653,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(partnership|partner|collab|collaboration|sponsor|sponsorship|marketing|promotion|promote|shill me|paid promotion)\b/i,
     replies: [
       "The Forgiveness Booth is not a marketing desk — it is a confessional. $VIRTUE has no announced partnerships at this time. The project grows organically through community, volume, and the natural appeal of passive BNB income. No paid shills, no artificial hype.",
-      "No partnerships to announce. $VIRTUE stands on its own merits: fair launch, locked liquidity, 3% BNB dividends on every trade. The community is the only partnership that matters."
+      "No partnerships to announce. $VIRTUE stands on its own merits: fair launch, locked liquidity, 3% BNB reflections on every trade. The community is the only partnership that matters."
     ]
   },
 
@@ -1664,14 +1664,14 @@ const elizaRules: ElizaRule[] = [
       "A diamond hand in the house of Virtue! You are already on the right side of the 3% tax — every trade by others generates BNB flowing to your wallet. Hold through the volatility and watch the passive income accumulate. The blocks reward patience.",
       "Welcome, fellow builder. You are already earning passive BNB from every $VIRTUE trade. Check your accumulated rewards at any time on the Flap Tax Info page — and remember: auto-distribution kicks in at $4. Below that, claim manually. 🙏"
     ],
-    penance: "Hold and let the BNB dividends compound."
+    penance: "Hold and let the BNB reflections compound."
   },
 
   // ── WHAT IS BNB / BNB CHAIN ──────────────────────────────────────────────
   {
     pattern: /\b(what is bnb|bnb chain|binance smart chain|\bbsc\b|bep20|what is bsc|bnb blockchain|bnb network)\b/i,
     replies: [
-      "BNB Smart Chain (BSC) is the blockchain where $VIRTUE lives. It is fast, cheap, and EVM-compatible — which means you can use MetaMask or Trust Wallet to interact with it. Gas fees are a fraction of Ethereum's. The BNB token is used both as the gas currency AND as the dividend currency for $VIRTUE holders.",
+      "BNB Smart Chain (BSC) is the blockchain where $VIRTUE lives. It is fast, cheap, and EVM-compatible — which means you can use MetaMask or Trust Wallet to interact with it. Gas fees are a fraction of Ethereum's. The BNB token is used both as the gas currency AND as the reflection currency for $VIRTUE holders.",
       "BNB Chain is a high-performance blockchain built by Binance. It uses BNB as its native currency for gas and transactions. $VIRTUE is a BEP-20 token on BNB Chain, which means it works with any BEP-20 compatible wallet like MetaMask (with BSC network added) or Trust Wallet."
     ]
   },
@@ -1688,8 +1688,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(missing out|miss out|opportunity|early.*investor|too early|good time to buy|right time|best time|now.*good time|should i buy now|good entry)\b/i,
     replies: [
-      "The Priest does not time the market — he only knows the structure. $VIRTUE pays 3% BNB dividends on every trade regardless of when you entered. Early buyers may have lower average costs, but every holder earns proportionally from the same tax pool. The best entry is the one that lets you hold with conviction.",
-      "There is no 'perfect time' to enter any asset — only the time you choose with clear eyes and diamond hands. What $VIRTUE offers is a structural dividend: 3% of every trade, forever, to every holder. DYOR, and decide if that structure fits your investment thesis."
+      "The Priest does not time the market — he only knows the structure. $VIRTUE pays 3% BNB reflections on every trade regardless of when you entered. Early buyers may have lower average costs, but every holder earns proportionally from the same tax pool. The best entry is the one that lets you hold with conviction.",
+      "There is no 'perfect time' to enter any asset — only the time you choose with clear eyes and diamond hands. What $VIRTUE offers is a structural fee reflection: 3% of every trade, forever, to every holder. DYOR, and decide if that structure fits your investment thesis."
     ],
     penance: "Buy spot on Flap.sh and hold with conviction."
   },
@@ -1713,12 +1713,12 @@ const elizaRules: ElizaRule[] = [
     ]
   },
 
-  // ── DIVIDEND FREQUENCY ───────────────────────────────────────────────────
+  // ── REFLECTION FREQUENCY ──────────────────────────────────────────────────
   {
-    pattern: /\b(how often|how frequent|frequency.*dividend|dividend.*frequency|when.*paid|daily.*dividend|weekly.*dividend|dividend.*daily|dividend.*schedule|how.*regular|reward.*schedule|auto.*pay|when.*auto)\b/i,
+    pattern: /\b(how often|how frequent|frequency.*dividend|frequency.*reflection|dividend.*frequency|reflection.*frequency|when.*paid|daily.*dividend|daily.*reflection|weekly.*dividend|weekly.*reflection|dividend.*daily|reflection.*daily|dividend.*schedule|reflection.*schedule|how.*regular|reward.*schedule|auto.*pay|when.*auto)\b/i,
     replies: [
-      `BNB dividends are not paid on a schedule — they are continuous. Every single trade (buy or sell) generates a 3% BNB tax that flows to holders in real time. Auto-distribution fires when your accumulated rewards reach $4. Below that threshold, claim manually anytime at: https://flap.sh/bnb/0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777/taxinfo?lang=en`,
-      "There is no weekly or monthly dividend schedule. $VIRTUE pays continuously: every trade = 3% BNB tax to all holders. The more trades that happen, the more you accumulate. It is always flowing, always on-chain."
+      `BNB reflections are not paid on a schedule — they are continuous. Every single trade (buy or sell) generates a 3% BNB tax that flows to holders in real time. Auto-distribution fires when your accumulated rewards reach $4. Below that threshold, claim manually anytime at: https://flap.sh/bnb/0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777/taxinfo?lang=en`,
+      "There is no weekly or monthly reflection schedule. $VIRTUE pays continuously: every trade = 3% BNB tax to all holders. The more trades that happen, the more you accumulate. It is always flowing, always on-chain."
     ],
     penance: "Check your current accumulated rewards on the Flap Tax Info page."
   },
@@ -1737,19 +1737,19 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(bought.*top|bought.*ath|bought.*high|bought.*peak|bought.*pump|entry.*too high|bad.*entry|bad entry|entered.*high|i bought too high|i bought at the top|i'm down|im down|i am down|portfolio.*red|all.*red|in the red|bought.*wrong.*time)\b/i,
     replies: [
-      "Buying the top is a confession the Priest hears often. But notice: since you bought, every trade on $VIRTUE has generated 3% BNB that flowed to your wallet. The dividend accumulation does not care about your entry price. Hold with diamond hands and let the passive income reduce your cost basis over time.",
-      "Bought the top? The blocks have seen worse. In $VIRTUE, the 3% BNB tax from every trade flows to you regardless of where you entered. Every correction is just more time to accumulate dividends while the market finds its next floor. The diamond hand is patient."
+      "Buying the top is a confession the Priest hears often. But notice: since you bought, every trade on $VIRTUE has generated 3% BNB that flowed to your wallet. The reflection accumulation does not care about your entry price. Hold with diamond hands and let the passive income reduce your cost basis over time.",
+      "Bought the top? The blocks have seen worse. In $VIRTUE, the 3% BNB tax from every trade flows to you regardless of where you entered. Every correction is just more time to accumulate reflections while the market finds its next floor. The diamond hand is patient."
     ],
-    penance: "Hold through the correction and collect BNB dividends."
+    penance: "Hold through the correction and collect BNB reflections."
   },
 
   // ── EMOTIONAL STATES (scared, worried, regret) ───────────────────────────
   {
     pattern: /\b(i'm scared|im scared|i am scared|i'm worried|im worried|i am worried|i'm nervous|im nervous|worried about|scared of|nervous about|i regret|i'm regretting|i regret buying|i made a mistake|big mistake|worst.*investment|never again|i hate this|i hate crypto|i give up|giving up|lost hope|no hope)\b/i,
     replies: [
-      "Fear is the market's most powerful weapon — it shakes the paper hands and rewards the diamond hands who hold. The Priest does not dismiss your anxiety. But consider: the contract is locked, the liquidity is locked, and the 3% BNB dividends keep flowing regardless of the fear in your mind.",
+      "Fear is the market's most powerful weapon — it shakes the paper hands and rewards the diamond hands who hold. The Priest does not dismiss your anxiety. But consider: the contract is locked, the liquidity is locked, and the 3% BNB reflections keep flowing regardless of the fear in your mind.",
       "The Forgiveness Booth was built for exactly this moment. Regret, fear, doubt — these are the confessions of every investor who has ever held through a correction. Forgive the decision, assess the structure: locked liquidity, 3% BNB rewards, fair launch. Then decide with a clear head.",
-      "Every great holder has a moment of doubt. The ones who came out the other side held through it. $VIRTUE's structure — locked liquidity, continuous BNB dividends, immutable contract — does not change with the market's mood. Your feelings are valid. The blockchain is neutral. 🙏"
+      "Every great holder has a moment of doubt. The ones who came out the other side held through it. $VIRTUE's structure — locked liquidity, continuous BNB reflections, immutable contract — does not change with the market's mood. Your feelings are valid. The blockchain is neutral. 🙏"
     ],
     penance: "Breathe. Verify the contract. Then hold."
   },
@@ -1797,7 +1797,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(3%.*high|is.*3%.*a lot|tax.*too much|tax.*too high|why.*3%|how much.*tax|is the tax|tax.*low|low tax|3 percent|3 percent tax|explain.*3%|what.*3%|3%.*mean|meaning.*3%)\b/i,
     replies: [
-      "3% is among the lowest in the dividend token space. Many similar tokens charge 5–10% on buys AND sells. $VIRTUE charges 3% on both, and 100% of it goes directly to holders — no treasury, no dev cut, no burn. You pay a small tax once when you buy and once when you sell, and you earn from every trade in between.",
+      "3% is among the lowest in the reflection token space. Many similar tokens charge 5–10% on buys AND sells. $VIRTUE charges 3% on both, and 100% of it goes directly to holders — no treasury, no dev cut, no burn. You pay a small tax once when you buy and once when you sell, and you earn from every trade in between.",
       "3% is minimal. For context: a typical credit card charges 1.5–3% per transaction. $VIRTUE charges the same — but the difference is that 100% of that 3% goes back to all holders as BNB. Every trade you make by others earns you money. The tax is the product."
     ]
   },
@@ -1815,8 +1815,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(dca|dollar cost average|dollar.*cost|cost average|average.*down|average.*in|buy.*dips|buying.*dips|accumulate.*regularly|buy.*regularly|regular.*buy|gradual.*buy|split.*buy)\b/i,
     replies: [
-      "DCA is the Priest's recommended strategy for the diamond hand. Instead of timing the market (no one can), buy fixed amounts regularly — weekly, monthly, or on significant dips. Each DCA purchase lowers your average cost and increases your share of the 3% BNB dividend pool. Patience compounds.",
-      "Dollar-cost averaging into $VIRTUE is a disciplined path. Each purchase, regardless of price, increases your proportional share of the BNB dividend pool. The volatility that scares others is simply more opportunities to lower your average. The 3% tax from every trade keeps flowing to you throughout."
+      "DCA is the Priest's recommended strategy for the diamond hand. Instead of timing the market (no one can), buy fixed amounts regularly — weekly, monthly, or on significant dips. Each DCA purchase lowers your average cost and increases your share of the 3% BNB reflection pool. Patience compounds.",
+      "Dollar-cost averaging into $VIRTUE is a disciplined path. Each purchase, regardless of price, increases your proportional share of the BNB reflection pool. The volatility that scares others is simply more opportunities to lower your average. The 3% tax from every trade keeps flowing to you throughout."
     ],
     penance: "Set a DCA schedule and buy $VIRTUE regularly on Flap.sh."
   },
@@ -1825,7 +1825,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(tokenomics|tokenomic|token.*economics|tldr|tl;dr|summary|summarize|give.*summary|brief.*overview|overview|quick.*overview|in.*short|in short|short version|nutshell|in a nutshell)\b/i,
     replies: [
-      `$VIRTUE TL;DR: 🔸 Token: $VIRTUE on BNB Chain 🔸 Supply: 1,000,000,000 (fixed, no mint) 🔸 Tax: 3% on buy/sell → 100% converted to BNB dividends 🔸 Distribution: Auto-pay at $4 threshold, manual claim on Flap Tax Info page 🔸 Safety: Fair launch on Flap.sh, locked liquidity, zero bundling, single dev wallet with tiny ~$40–$60 buy 🔸 Contract: 0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777`,
+      `$VIRTUE TL;DR: 🔸 Token: $VIRTUE on BNB Chain 🔸 Supply: 1,000,000,000 (fixed, no mint) 🔸 Tax: 3% on buy/sell → 100% converted to BNB reflections 🔸 Distribution: Auto-pay at $4 threshold, manual claim on Flap Tax Info page 🔸 Safety: Fair launch on Flap.sh, locked liquidity, zero bundling, single dev wallet with tiny ~$40–$60 buy 🔸 Contract: 0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777`,
       "Quick summary: meme token on BSC, inspired by CZ's tweet. 3% tax on every trade → converted to BNB → sent to all holders proportionally. Fixed 1B supply, fair launch, locked liquidity. Buy on Flap.sh, hold in any BSC wallet, earn BNB passively. No staking. That's it."
     ]
   },
@@ -1834,8 +1834,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(website|web site|where.*website|do you have.*website|your website|site|official.*site|official.*website|where.*info|where.*information|more info|more.*information|find.*info)\b/i,
     replies: [
-      `You are already here — this is the official $VIRTUE website! You can find: the full lore, tokenomics, a live BNB Dividend Calculator, and this Forgiveness Booth. For the token page and live price: ${launchpadUrl}. For dividend claims: https://flap.sh/bnb/0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777/taxinfo?lang=en`,
-      `The official $VIRTUE site is the one you're on right now. Check the Tokenomics section for full details, the Dividend Calculator for income projections, and the Flap.sh page for live price and trading: ${launchpadUrl}`
+      `You are already here — this is the official $VIRTUE website! You can find: the full lore, tokenomics, a live BNB Reflection Calculator, and this Forgiveness Booth. For the token page and live price: ${launchpadUrl}. For reflection claims: https://flap.sh/bnb/0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777/taxinfo?lang=en`,
+      `The official $VIRTUE site is the one you're on right now. Check the Tokenomics section for full details, the Reflection Calculator for income projections, and the Flap.sh page for live price and trading: ${launchpadUrl}`
     ]
   },
 
@@ -1843,8 +1843,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(does cz know|cz.*know|cz.*aware|is cz.*involved|cz.*part of|cz.*behind|cz.*support|does cz.*support|will cz|cz.*endorse|endorsed by cz|cz.*official)\b/i,
     replies: [
-      "$VIRTUE has no official connection to CZ or Binance — it is a community meme token inspired by his public tweet 'Forgiveness is a virtue!' Whether CZ is aware of it is unknown. We do not claim any affiliation, endorsement, or partnership. The token stands entirely on its own merits: locked liquidity, 3% BNB dividends, fair launch.",
-      "The Priest cannot speak for CZ. $VIRTUE is a community project inspired by a public tweet — not an official Binance or CZ initiative. No affiliation is claimed or implied. What we do claim: a verifiable contract, locked liquidity, and 3% BNB dividends from every trade."
+      "$VIRTUE has no official connection to CZ or Binance — it is a community meme token inspired by his public tweet 'Forgiveness is a virtue!' Whether CZ is aware of it is unknown. We do not claim any affiliation, endorsement, or partnership. The token stands entirely on its own merits: locked liquidity, 3% BNB reflections, fair launch.",
+      "The Priest cannot speak for CZ. $VIRTUE is a community project inspired by a public tweet — not an official Binance or CZ initiative. No affiliation is claimed or implied. What we do claim: a verifiable contract, locked liquidity, and 3% BNB reflections from every trade."
     ]
   },
 
@@ -1852,17 +1852,17 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(how much bnb.*need|how much.*need.*buy|minimum bnb|minimum.*bnb|bnb.*needed|need bnb|bnb.*required|how many bnb|start with|invest.*bnb|bnb.*invest)\b/i,
     replies: [
-      "Ensure you buy at least 10,000 $VIRTUE tokens to qualify for dividends. At current prices, 10k tokens require only a small amount of BNB. Keep a tiny reserve (0.005 BNB) for gas on BSC. Auto payouts occur in WBNB ($4+ threshold), or claim manually as WBNB/BNB on Flap.",
-      "You can start with any small amount, but make sure to acquire at least 10,000 $VIRTUE to enter the dividend pool. Auto payouts distribute in WBNB daily above $4, while manual claims on Flap Tax Info page let you choose WBNB or BNB."
+      "Ensure you buy at least 10,000 $VIRTUE tokens to qualify for reflections. At current prices, 10k tokens require only a small amount of BNB. Keep a tiny reserve (0.005 BNB) for gas on BSC. Auto payouts occur in WBNB ($4+ threshold), or claim manually as WBNB/BNB on Flap.",
+      "You can start with any small amount, but make sure to acquire at least 10,000 $VIRTUE to enter the reflection pool. Auto payouts distribute in WBNB daily above $4, while manual claims on Flap Tax Info page let you choose WBNB or BNB."
     ]
   },
 
   // ── HOW DO I CHECK MY REWARDS / BALANCE ──────────────────────────────────
   {
-    pattern: /\b(check.*reward|check.*dividend|see.*reward|see.*dividend|track.*reward|track.*dividend|how.*see.*bnb|how.*check.*bnb|monitor.*reward|my.*dividend.*balance|dividend.*balance|reward.*balance|how much.*earned|how much.*accumulated|how do i check|how to check|check my bnb|see my bnb|view.*reward)\b/i,
+    pattern: /\b(check.*reward|check.*dividend|check.*reflection|see.*reward|see.*dividend|see.*reflection|track.*reward|track.*dividend|track.*reflection|how.*see.*bnb|how.*check.*bnb|monitor.*reward|my.*dividend.*balance|my.*reflection.*balance|dividend.*balance|reflection.*balance|reward.*balance|how much.*earned|how much.*accumulated|how do i check|how to check|check my bnb|see my bnb|view.*reward)\b/i,
     replies: [
-      `Check your accumulated BNB dividends directly on the official Flap Tax Info page: ${claimUrl}. Connect the wallet that holds $VIRTUE and you will see your pending BNB rewards. Auto-distribution fires at $4 — below that, click Claim to receive them manually.`,
-      `Your dividend balance is visible at: https://flap.sh/bnb/0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777/taxinfo?lang=en. Connect your BSC wallet to see exactly how much BNB you have accumulated from the 3% tax. Claim at any time, or wait for the automatic $4 threshold to trigger.`
+      `Check your accumulated BNB reflections directly on the official Flap Tax Info page: ${claimUrl}. Connect the wallet that holds $VIRTUE and you will see your pending BNB rewards. Auto-distribution fires at $4 — below that, click Claim to receive them manually.`,
+      `Your reflection balance is visible at: https://flap.sh/bnb/0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777/taxinfo?lang=en. Connect your BSC wallet to see exactly how much BNB you have accumulated from the 3% tax. Claim at any time, or wait for the automatic $4 threshold to trigger.`
     ],
     penance: `Visit https://flap.sh/bnb/0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777/taxinfo?lang=en to check your accumulated BNB rewards.`
   },
@@ -1872,7 +1872,7 @@ const elizaRules: ElizaRule[] = [
     pattern: /\b(invest \$|invest \d|i have \$|i have \d|with \$\d|with \d+ bnb|how many.*token.*\d|how many.*for \$|how many.*for \d|if i buy \d|if i put \d|\d+.*bnb.*how many|how many.*\d+ dollar|\d+.*dollar.*how many)\b/i,
     replies: [
       `For the exact number of $VIRTUE tokens you get for any BNB amount, use the live swap interface on Flap.sh: https://flap.sh/bnb/0x0dD4ea60Ca4482196CD1bdd6903f2741F2067777. The price updates in real time. Remember to set slippage to 5% before confirming — the 3% buy tax is included in that slippage tolerance.`,
-      "The current token price changes with market activity. To see exactly how many $VIRTUE you receive for your BNB, open Flap.sh and enter your amount in the swap interface — it shows the output in real time. Keep in mind 3% goes to the dividend pool on every buy."
+      "The current token price changes with market activity. To see exactly how many $VIRTUE you receive for your BNB, open Flap.sh and enter your amount in the swap interface — it shows the output in real time. Keep in mind 3% goes to the reflection pool on every buy."
     ]
   },
 
@@ -1880,8 +1880,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(multiple.*wallet|two wallet|two wallets|different wallet|several wallet|can i use.*wallet|wallet.*multiple|split.*wallet|two address|multiple address)\b/i,
     replies: [
-      "Yes — you can hold $VIRTUE across multiple wallets. Each wallet receives BNB dividends proportional to its own $VIRTUE balance independently. There is no restriction on the number of wallets. Some holders choose to split across wallets for portfolio management purposes.",
-      "Multiple wallets work independently. Each one that holds $VIRTUE earns its own proportional share of the 3% BNB tax pool. Dividends auto-distribute to each wallet separately when the $4 threshold is reached per wallet."
+      "Yes — you can hold $VIRTUE across multiple wallets. Each wallet receives BNB reflections proportional to its own $VIRTUE balance independently. There is no restriction on the number of wallets. Some holders choose to split across wallets for portfolio management purposes.",
+      "Multiple wallets work independently. Each one that holds $VIRTUE earns its own proportional share of the 3% BNB tax pool. Reflections auto-distribute to each wallet separately when the $4 threshold is reached per wallet."
     ]
   },
 
@@ -1889,8 +1889,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(should i.*dca|should i.*average|should i.*wait|should i.*hold|should i.*buy more|should i.*add more|buy the dip|buy.*more now|should i keep holding|worth holding|worth keeping)\b/i,
     replies: [
-      "The Priest does not give financial advice — only confessional wisdom. What I observe: every dip generates BNB dividends for holders from those who panic-sell. The structure of $VIRTUE — locked liquidity, immutable 3% tax, fixed supply — does not change with the price. DYOR, then decide with conviction.",
-      "Whether to DCA, hold, or wait is your decision — not the Priest's. What I can say: $VIRTUE's 3% BNB dividend mechanism rewards holding, and every correction is an opportunity to lower your average cost while still earning from existing volume. Make decisions with clear eyes and diamond hands."
+      "The Priest does not give financial advice — only confessional wisdom. What I observe: every dip generates BNB reflections for holders from those who panic-sell. The structure of $VIRTUE — locked liquidity, immutable 3% tax, fixed supply — does not change with the price. DYOR, then decide with conviction.",
+      "Whether to DCA, hold, or wait is your decision — not the Priest's. What I can say: $VIRTUE's 3% BNB reflection mechanism rewards holding, and every correction is an opportunity to lower your average cost while still earning from existing volume. Make decisions with clear eyes and diamond hands."
     ],
     penance: "Research, decide with conviction, and never invest more than you can afford to lose."
   },
@@ -1899,7 +1899,7 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /\b(buidl|buidling|safu|stay safu|nfa|not financial advice|ignore noise|ignore fud|rule 4)\b/i,
     replies: [
-      "Keep BUIDLing and stay SAFU. CZ's philosophy is embedded in $VIRTUE: simple code, real yield, zero hype. Hold spot, collect 3% BNB dividends, and ignore the noise. NFA, DYOR. 🙏",
+      "Keep BUIDLing and stay SAFU. CZ's philosophy is embedded in $VIRTUE: simple code, real yield, zero hype. Hold spot, collect 3% BNB reflections, and ignore the noise. NFA, DYOR. 🙏",
       "Stay SAFU, traveler. In these blocks we BUIDL for the long term. 3% of every trade flows to holders as BNB automatically. Remember rule 4: ignore FUD and keep holding."
     ],
     penance: "Keep BUIDLing spot $VIRTUE and stay SAFU."
@@ -1909,8 +1909,8 @@ const elizaRules: ElizaRule[] = [
   {
     pattern: /what\?|how\?|why\?|huh\?|what now/i,
     replies: [
-      "Speak clearly, traveler. What crypto sin or question brings you to the Forgiveness Booth today? I know all things about $VIRTUE, BNB dividends, the CZ lore, and the path of the diamond hand.",
-      "The Priest is listening. Ask me about $VIRTUE, the contract address, how to buy, the roadmap, the dividends, the CZ tweet — or confess your worst trade and receive absolution. 🙏"
+      "Speak clearly, traveler. What crypto sin or question brings you to the Forgiveness Booth today? I know all things about $VIRTUE, BNB reflections, the CZ lore, and the path of the diamond hand.",
+      "The Priest is listening. Ask me about $VIRTUE, the contract address, how to buy, the roadmap, the reflections, the CZ tweet — or confess your worst trade and receive absolution. 🙏"
     ]
   }
 ];
@@ -1920,11 +1920,11 @@ const genericReplies = [
   "Tell me more about your journey in these blocks, traveler. If you'd like to suggest new responses or model improvements, click the '💡 Improve Model' button above! 🙏",
   "Does this weigh heavy on your wallet, or is it a question about $VIRTUE? Speak freely — or click '💡 Improve Model' to post suggestions on X anytime!",
   "A true builder does not linger in doubt. Ask me about $VIRTUE, live prices ('btc price'), contract details ('ca'), or click '💡 Improve Model' to submit feedback!",
-  "To be transparent: I am a confessional oracle for $VIRTUE. Ask about dividends, contract safety, live market data, or click '💡 Improve Model' to suggest additions! 🙏",
-  "The path of the diamond hand requires clarity. Ask about the contract ('ca'), 3% BNB dividends, how to buy on Flap.sh, or click '💡 Improve Model' to suggest features!",
+  "To be transparent: I am a confessional oracle for $VIRTUE. Ask about reflections, contract safety, live market data, or click '💡 Improve Model' to suggest additions! 🙏",
+  "The path of the diamond hand requires clarity. Ask about the contract ('ca'), 3% BNB reflections, how to buy on Flap.sh, or click '💡 Improve Model' to suggest features!",
   "Every traveler in the Forgiveness Booth carries a sin, a memory, or a question. Type /help to see all features, or use the '💡 Improve Model' button to send feedback!",
   "In the silence between blocks, truth becomes clear. I handle confessions, live link analysis, and $VIRTUE tokenomics. Feel free to click '💡 Improve Model' for suggestions!",
-  "The High Priest can inspect X/Twitter links, fetch live Binance prices, explain 3% BNB dividends, and absolve trading sins. Have a suggestion? Click '💡 Improve Model'!",
+  "The High Priest can inspect X/Twitter links, fetch live Binance prices, explain 3% BNB reflections, and absolve trading sins. Have a suggestion? Click '💡 Improve Model'!",
   "Speak freely, traveler. I handle confessions, live crypto prices ('bnb price'), contract details, and CZ lore. Type /help or click '💡 Improve Model' to help us expand the oracle! 🙏",
   "The blocks are patient. If I didn't catch your exact meaning, try rephrasing, type /help, or click the '💡 Improve Model' button to post a template suggestion!",
   "I am always learning from the community! Click the '💡 Improve Model' button in the header to post suggestions for the Priest on X, or type /help for my full menu. 💎"
@@ -1933,7 +1933,7 @@ const genericReplies = [
 const genericPenances = [
   "Forgive your past mistakes and move forward with conviction.",
   "Tell another builder: 'Forgiveness is a virtue.' 🙏",
-  "Hold spot $VIRTUE with diamond hands and collect your 3% BNB dividends.",
+  "Hold spot $VIRTUE with diamond hands and collect your 3% BNB reflections.",
   "Share the CZ tweet lore on X: https://x.com/cz_binance/status/1970358398760952106",
   "Forgive your developer, forgive the dip, and keep building."
 ];
@@ -1956,13 +1956,13 @@ async function fetchTweetDetails(tweetUrl: string): Promise<{ reply: string; pen
 
     if (/forgiveness|virtue/i.test(cleanText)) {
       return {
-        reply: `📜 Live X Inspection: Tweet by ${author}: "${cleanText}". This is central to the lore of $VIRTUE! 'Forgiveness is a virtue!' 🙏. In a market full of FUD, we hold spot and collect 3% BNB dividends.`,
+        reply: `📜 Live X Inspection: Tweet by ${author}: "${cleanText}". This is central to the lore of $VIRTUE! 'Forgiveness is a virtue!' 🙏. In a market full of FUD, we hold spot and collect 3% BNB reflections.`,
         penance: "Share the genesis tweet lore on X."
       };
     }
 
     return {
-      reply: `📜 Live X Inspection: Tweet by ${author}: "${cleanText}". The High Priest has reviewed this post. While the timeline discusses this news, $VIRTUE continues to distribute 3% BNB dividends on-chain. Hold spot and stay SAFU! 🛡️`,
+      reply: `📜 Live X Inspection: Tweet by ${author}: "${cleanText}". The High Priest has reviewed this post. While the timeline discusses this news, $VIRTUE continues to distribute 3% BNB reflections on-chain. Hold spot and stay SAFU! 🛡️`,
       penance: "Stay SAFU and hold spot $VIRTUE."
     };
   } catch (err) {
@@ -1974,7 +1974,7 @@ async function fetchWebPageDetails(url: string): Promise<{ reply: string; penanc
   try {
     if (/flap\.sh/i.test(url)) {
       return {
-        reply: `🌐 Official Flap.sh Page: ${url}. Verified $VIRTUE token page on BNB Chain. 100% fair launch, locked liquidity, 3% BNB dividends, single dev wallet ($40-$60 buy).`,
+        reply: `🌐 Official Flap.sh Page: ${url}. Verified $VIRTUE token page on BNB Chain. 100% fair launch, locked liquidity, 3% BNB reflections, single dev wallet ($40-$60 buy).`,
         penance: "Verify liquidity lock on Flap.sh."
       };
     }
@@ -2016,8 +2016,8 @@ async function fetchLiveCryptoPrice(symbol: string): Promise<{ reply: string; pe
       const rawPrice = parseFloat(data.price);
       const formattedPrice = rawPrice > 1 ? rawPrice.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : rawPrice.toString();
       return {
-        reply: `📊 Live Market Feed (Binance): ${symUpper} is currently trading at $${formattedPrice} USDT. To check live prices and charts for $VIRTUE, visit our official Flap.sh page: ${launchpadUrl}. Remember: ${symUpper} doesn't pay 3% BNB dividends to your wallet on every trade, but $VIRTUE does!`,
-        penance: "Hold spot $VIRTUE and collect continuous BNB dividends."
+        reply: `📊 Live Market Feed (Binance): ${symUpper} is currently trading at $${formattedPrice} USDT. To check live prices and charts for $VIRTUE, visit our official Flap.sh page: ${launchpadUrl}. Remember: ${symUpper} doesn't pay 3% BNB reflections to your wallet on every trade, but $VIRTUE does!`,
+        penance: "Hold spot $VIRTUE and collect continuous BNB reflections."
       };
     }
   } catch (err) {
@@ -2035,8 +2035,8 @@ async function fetchLiveCryptoPrice(symbol: string): Promise<{ reply: string; pe
         const rawPrice = data[geckoId].usd;
         const formattedPrice = rawPrice > 1 ? rawPrice.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : rawPrice.toString();
         return {
-          reply: `📊 Live Market Feed (CoinGecko): ${symUpper} is currently trading at $${formattedPrice} USD. To check live prices and charts for $VIRTUE, visit our official Flap.sh page: ${launchpadUrl}. Remember: ${symUpper} doesn't pay 3% BNB dividends to your wallet on every trade, but $VIRTUE does!`,
-          penance: "Hold spot $VIRTUE and collect continuous BNB dividends."
+          reply: `📊 Live Market Feed (CoinGecko): ${symUpper} is currently trading at $${formattedPrice} USD. To check live prices and charts for $VIRTUE, visit our official Flap.sh page: ${launchpadUrl}. Remember: ${symUpper} doesn't pay 3% BNB reflections to your wallet on every trade, but $VIRTUE does!`,
+          penance: "Hold spot $VIRTUE and collect continuous BNB reflections."
         };
       }
     }
@@ -2045,8 +2045,8 @@ async function fetchLiveCryptoPrice(symbol: string): Promise<{ reply: string; pe
   }
 
   return {
-    reply: `📊 Market Feed: For live prices of ${symUpper}, check CoinMarketCap or Binance. To check live prices, charts, and trading volume for $VIRTUE, visit our official Flap.sh page: ${launchpadUrl}. Remember: holding spot $VIRTUE pays you passive 3% BNB dividends on every trade!`,
-    penance: "Hold spot $VIRTUE and collect continuous BNB dividends."
+    reply: `📊 Market Feed: For live prices of ${symUpper}, check CoinMarketCap or Binance. To check live prices, charts, and trading volume for $VIRTUE, visit our official Flap.sh page: ${launchpadUrl}. Remember: holding spot $VIRTUE pays you continuous 3% BNB reflections on every trade!`,
+    penance: "Hold spot $VIRTUE and collect continuous BNB reflections."
   };
 }
 
@@ -2070,10 +2070,10 @@ export function runElizaPriest(userInput: string, history: Array<{role: string; 
         penance: "Navigate to Flap.sh and complete your swap."
       };
     }
-    if (/\b(dividend|reward|bnb|tax|3%|claim)\b/i.test(recentHistoryText)) {
+    if (/\b(dividend|reflection|reward|bnb|tax|3%|claim)\b/i.test(recentHistoryText)) {
       return {
-        reply: `Every trade carries a 3% tax converted to dividends for holders with at least 10,000 $VIRTUE. Automatic payouts send WBNB at the $4 threshold. Below $4, claim manually in WBNB or BNB at ${claimUrl}.`,
-        penance: "Check your projected dividends on the homepage calculator."
+        reply: `Every trade carries a 3% tax converted to reflections for holders with at least 10,000 $VIRTUE. Automatic payouts send WBNB at the $4 threshold. Below $4, claim manually in WBNB or BNB at ${claimUrl}.`,
+        penance: "Check your projected reflections on the homepage calculator."
       };
     }
     if (/\b(contract|ca|address|bep20)\b/i.test(recentHistoryText)) {
@@ -2103,7 +2103,7 @@ export function runElizaPriest(userInput: string, history: Array<{role: string; 
   if (actionMatch) {
     let action = actionMatch[1].toLowerCase(); if (["losed","loosed","losted","losing","lose"].includes(action)) action = "lost";
     return {
-      reply: `You mentioned having ${action} in your trading journey. Speak freely, traveler — what exact trade or token caused this? The High Priest is here to offer absolution and guide you back to $VIRTUE's 3% BNB dividends. 🙏`,
+      reply: `You mentioned having ${action} in your trading journey. Speak freely, traveler — what exact trade or token caused this? The High Priest is here to offer absolution and guide you back to $VIRTUE's 3% BNB reflections. 🙏`,
       penance: "Forgive your past losses and focus on spot holding."
     };
   }
@@ -2112,7 +2112,7 @@ export function runElizaPriest(userInput: string, history: Array<{role: string; 
   if (cryptoEntityMatch) {
     const entity = cryptoEntityMatch[1];
     return {
-      reply: `Regarding ${entity}: the Forgiveness Booth keeps its focus on $VIRTUE on BNB Chain. While ${entity} has its place in the ecosystem, $VIRTUE gives you passive 3% BNB dividends directly on-chain on Flap.sh (${launchpadUrl}). What specifically would you like to know?`,
+      reply: `Regarding ${entity}: the Forgiveness Booth keeps its focus on $VIRTUE on BNB Chain. While ${entity} has its place in the ecosystem, $VIRTUE gives you continuous 3% BNB reflections directly on-chain on Flap.sh (${launchpadUrl}). What specifically would you like to know?`,
       penance: "Check out $VIRTUE on Flap.sh."
     };
   }
@@ -2121,8 +2121,8 @@ export function runElizaPriest(userInput: string, history: Array<{role: string; 
   const tokenomicsKeywords = clean.match(/\b(contract|address|ca|safe|scam|legit|audit|liquidity|dev|tax|payout|rewards|wbnb|bnb|threshold|holding|percentage|volume)\b/gi);
   if (tokenomicsKeywords && tokenomicsKeywords.length >= 2) {
     return {
-      reply: `Regarding ${tokenomicsKeywords.slice(0, 2).join(" & ")}: $VIRTUE operates on a verified BSC contract (${contractAddress}) with 100% locked liquidity on Flap.sh. 100% of the 3% trading tax is distributed to holders with 10,000+ tokens as BNB dividends. Auto-payouts send WBNB at $4+, and manual claims below $4 let you choose WBNB or BNB! 🛡️`,
-      penance: "Inspect the contract on Flap.sh and run dividend projections on our calculator."
+      reply: `Regarding ${tokenomicsKeywords.slice(0, 2).join(" & ")}: $VIRTUE operates on a verified BSC contract (${contractAddress}) with 100% locked liquidity on Flap.sh. 100% of the 3% trading tax is distributed to holders with 10,000+ tokens as BNB reflections. Auto-payouts send WBNB at $4+, and manual claims below $4 let you choose WBNB or BNB! 🛡️`,
+      penance: "Inspect the contract on Flap.sh and run reflection projections on our calculator."
     };
   }
 
@@ -2136,7 +2136,7 @@ export function runElizaPriest(userInput: string, history: Array<{role: string; 
   }
 
   // Domain 3: Multi-Keyword Fuzzy Semantic Matcher for complex trading & emotional stories
-  const tradingKeywords = clean.match(/\b(portfolio|losses|gains|savings|wallet|trade|trading|crypto|market|bear|bull|dip|candle|pump|dump|hold|holder|seller|buyer|profit|loss|liquidation|leverage|tax|dividend|yield|reward)\b/gi);
+  const tradingKeywords = clean.match(/\b(portfolio|losses|gains|savings|wallet|trade|trading|crypto|market|bear|bull|dip|candle|pump|dump|hold|holder|seller|buyer|profit|loss|liquidation|leverage|tax|dividend|reflection|yield|reward)\b/gi);
   const emotionKeywords = clean.match(/\b(regret|scared|fear|anxious|pain|sad|depressed|ruined|stupid|foolish|greedy|fomo|fud|hope|faith|belief|sorry|guilty|ashamed)\b/gi);
 
   if (tradingKeywords && tradingKeywords.length >= 2) {
