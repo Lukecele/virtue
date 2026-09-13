@@ -106,6 +106,16 @@ Open [http://localhost:3000](http://localhost:3000) with your browser.
 
 ---
 
+## ⚖️ Open-Source Architecture & Research Notice
+
+This repository represents free, open-source computational linguistic research and deterministic NLP software (MIT License) developed by independent open-source software engineers.
+
+- **Non-Custodial NLP Research:** This software functions strictly as a rule-based conversational interface and decentralized mathematical calculator. It does not operate a financial exchange, execute custody over digital assets, or provide investment or financial advice.
+- **MiCA Exemption (Recital 22):** Open-source analytical software, algorithmic modeling tools, and decentralized conversational engines operate outside the scope of crypto-asset service provider (CASP) regulations.
+- **Meme Culture & Entertainment:** The conversational themes are inspired by crypto culture and community lore for educational and entertainment purposes.
+
+---
+
 ## License
 
-Released under the MIT License.
+Released under the [MIT License](./LICENSE).

@@ -973,9 +973,9 @@ export default function Home() {
           <div className="footer-copyright">
             &copy; {new Date().getFullYear()} Virtue. Inspired by @cz_binance.
             <div className="footer-disclaimer">
-              Disclaimer: $VIRTUE is a meme token for entertainment purposes only and has no affiliation with Changpeng Zhao (CZ) or Binance. 
-              Holders receive dividends in BNB generated from trading volume. Crypto investments are subject to high market risk. 
-              Please trade responsibly and do your own research.
+              Disclaimer: $VIRTUE is a community meme token for entertainment purposes only and has no official affiliation with Changpeng Zhao (CZ) or Binance. 
+              Smart contract fee reflections in BNB are distributed autonomously on-chain from trading volume. Crypto-assets involve substantial risk of loss. 
+              This interface and deterministic NLP conversational engine are free, open-source software (MIT License) developed for research and educational purposes. Not financial advice.
             </div>
           </div>
         </div>
