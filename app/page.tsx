@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 // Declare window.ethereum for TypeScript
 declare global {
   interface Window {
-    ethereum?: any;
+    ethereum?: unknown;
   }
 }
 
@@ -823,7 +823,7 @@ export default function Home() {
                       {msg.penance && (
                         <div className="chat-penance-area">
                           <div className="chat-penance-title">✨ Divine Penance Issued</div>
-                          <div className="chat-penance-text">"{msg.penance}"</div>
+                          <div className="chat-penance-text">&ldquo;{msg.penance}&rdquo;</div>
                           <div style={{ display: "flex", gap: "8px", marginTop: "8px", flexWrap: "wrap" }}>
                             <button 
                               onClick={() => {
@@ -948,7 +948,7 @@ export default function Home() {
                 <span className="logo-text" style={{ fontSize: "1.3rem" }}>Virtue</span>
               </div>
               <p className="footer-description">
-                Inspired by CZ's legendary advice. Forgiveness is not weakness. It's the ultimate power move to buy the dip and keep building.
+                Inspired by CZ&apos;s legendary advice. Forgiveness is not weakness. It&apos;s the ultimate power move to buy the dip and keep building.
               </p>
             </div>
             

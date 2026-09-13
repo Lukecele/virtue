@@ -1,7 +1,12 @@
 {
   "name": "virtue",
   "version": "1.0.0",
-  "private": true,
+  "license": "MIT",
+  "author": "Lukecele",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lukecele/virtue.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -17,7 +17,7 @@ const reflections: Record<string, string> = {
 function reflect(text: string): string {
   if (!text) return "that trade";
   // Clean trailing punctuation and leading fillers
-  let cleaned = text.trim()
+  const cleaned = text.trim()
     .replace(/[?.!;,]+$/g, "")
     .replace(/^(that|because|and|so|that i|to|when i|after i)\s+/i, "");
 
@@ -2174,7 +2174,7 @@ export async function POST(request: Request) {
   try {
     const { messages } = await request.json();
     const history = Array.isArray(messages) ? messages : [];
-    const userMessages = history.filter((m: any) => m.role === "user");
+    const userMessages = history.filter((m: { role?: string; content?: string }) => m.role === "user");
     const latestUserConfession = userMessages[userMessages.length - 1]?.content || "";
     const clean = latestUserConfession.trim().toLowerCase();
 
