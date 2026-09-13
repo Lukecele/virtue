@@ -20,7 +20,7 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm install --no-audit
 
       - name: Run NLP Engine Unit Tests
         run: npm test
