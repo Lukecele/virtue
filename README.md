@@ -1,5 +1,12 @@
 # Virtue: AI Agent & Real-Time Financial Calculator
 
+[![CI](https://github.com/Lukecele/virtue/actions/workflows/ci.yml/badge.svg)](https://github.com/Lukecele/virtue/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-16_App_Router-black?logo=next.js&logoColor=white)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
+[![Deterministic Engine](https://img.shields.io/badge/Engine-Deterministic_NLP_2.2k_LOC-8A2BE2)](#)
+[![Vercel Edge](https://img.shields.io/badge/Vercel-Edge_Runtime-black?logo=vercel&logoColor=white)](https://virtue-ecru.vercel.app)
+
 An interactive, pattern-matching AI conversational agent and real-time cryptocurrency financial calculator. Built with Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS, and live Binance market data.
 
 **Live Application:** [https://virtue-ecru.vercel.app](https://virtue-ecru.vercel.app)  
