@@ -34,23 +34,23 @@ The conversational intelligence operates as a 7-stage deterministic waterfall:
 
 ```mermaid
 flowchart TD
-    A["User Confession / Input"] --> B{"External Oracles\nTriggered?"}
-    B -- "X / Web URL" --> C["Fetch Live Tweet / Page Details"]
-    B -- "Price Query\n(BTC, ETH, BNB, etc.)" --> D["Binance REST API\n(Live Tickers)"]
-    B -- "Conversational Text" --> E{"Multilingual Gate\n(11 Languages)"}
+    A["User Confession / Input"] --> B{"External Oracles<br>Triggered?"}
+    B -->|"X / Web URL"| C["Fetch Live Tweet / Page Details"]
+    B -->|"Price Query<br>(BTC, ETH, BNB, etc.)"| D["Binance REST API<br>(Live Tickers)"]
+    B -->|"Conversational Text"| E{"Multilingual Gate<br>(11 Languages)"}
     
-    E -- "Non-English Detected" --> F["Localized Native Prompt\n(Request English Translation)"]
-    E -- "English Input" --> G{"Safety & Profanity\nGuardrails"}
+    E -->|"Non-English Detected"| F["Localized Native Prompt<br>(Request English Translation)"]
+    E -->|"English Input"| G{"Safety and Profanity<br>Guardrails"}
     
-    G -- "Profanity Match" --> H["Respectful Sanctuary Redirect"]
-    G -- "Passed" --> I["Enhanced Pronoun Reflection\n(reflect() Bi-directional Mapping)"]
+    G -->|"Profanity Match"| H["Respectful Sanctuary Redirect"]
+    G -->|"Passed"| I["Enhanced Pronoun Reflection<br>(reflect() Bi-directional Mapping)"]
     
-    I --> J{"Phase 1:\nHigh-Priority Intent Waterfall\n(500+ Regex Matchers)"}
-    J -- "Pattern Match" --> K["Structured Absolution & Penance"]
-    J -- "No Exact Match" --> L{"Phase 2:\nFuzzy Concept & Entity Scorer\n(Trading, Emotion, Tokenomics)"}
+    I --> J{"Phase 1:<br>High-Priority Intent Waterfall<br>(500+ Regex Matchers)"}
+    J -->|"Pattern Match"| K["Structured Absolution and Penance"]
+    J -->|"No Exact Match"| L{"Phase 2:<br>Fuzzy Concept and Entity Scorer<br>(Trading, Emotion, Tokenomics)"}
     
-    L -- "Score >= Threshold" --> K
-    L -- "Fallback" --> M["Dynamic Contextual Recovery\n(Crypto-hint Sensitive Fallbacks)"]
+    L -->|"Score >= Threshold"| K
+    L -->|"Fallback"| M["Dynamic Contextual Recovery<br>(Crypto-hint Sensitive Fallbacks)"]
 ```
 
 ---
