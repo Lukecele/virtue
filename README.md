@@ -49,7 +49,7 @@ flowchart TD
     J -->|"Pattern Match"| K["Structured Absolution and Penance"]
     J -->|"No Exact Match"| L{"Phase 2:<br>Fuzzy Concept and Entity Scorer<br>(Trading, Emotion, Tokenomics)"}
     
-    L -->|"Score >= Threshold"| K
+    L -->|"Score ≥ Threshold"| K
     L -->|"Fallback"| M["Dynamic Contextual Recovery<br>(Crypto-hint Sensitive Fallbacks)"]
 ```
 
