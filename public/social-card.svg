@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Virtue — Rule-based conversations &amp; crypto calculations</title>
+  <desc id="desc">A gold and purple project card, signed by Lukecele.</desc>
+  <defs>
+    <radialGradient id="glow"><stop stop-color="#9d4edd" stop-opacity=".28"/><stop offset="1" stop-color="#060608" stop-opacity="0"/></radialGradient>
+    <linearGradient id="line"><stop stop-color="#f3ba2f"/><stop offset="1" stop-color="#9d4edd"/></linearGradient>
+  </defs>
+  <rect width="1280" height="640" fill="#060608"/>
+  <ellipse cx="1120" cy="180" rx="520" ry="480" fill="url(#glow)"/>
+  <rect x="32" y="32" width="1216" height="576" rx="24" fill="none" stroke="#39303f" stroke-width="2"/>
+  <rect x="80" y="84" width="88" height="6" rx="3" fill="url(#line)"/>
+  <g font-family="DejaVu Sans, Arial, sans-serif">
+    <text x="80" y="217" fill="#f3ba2f" font-size="108" font-weight="700" letter-spacing="-4">Virtue</text>
+    <text x="80" y="319" fill="#ffffff" font-size="51" font-weight="600">Rule-based conversations</text>
+    <text x="80" y="386" fill="#ffffff" font-size="51" font-weight="600">&amp; crypto calculations</text>
+    <path d="M80 447H1200" stroke="#39303f" stroke-width="2"/>
+    <text x="80" y="535" fill="#c77dff" font-size="34" font-weight="600">by Lukecele</text>
+    <text x="1200" y="533" fill="#b7b7cc" font-size="26" text-anchor="end">github.com/Lukecele/virtue</text>
+  </g>
+</svg>
