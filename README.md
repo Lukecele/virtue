@@ -1,23 +1,23 @@
 # Virtue
 
-**A rule-based conversational engine and crypto calculator for exploring scripted dialogue and market-data integrations.**
+**A rule-based conversational engine for exploring crypto-themed dialogue, with live market lookups and a companion calculator.**
 
 By **Luca Celebrano · [@Lukecele](https://github.com/Lukecele)**
 
-[Try the demo](https://virtue-ecru.vercel.app) · [Explore the source](https://github.com/Lukecele/virtue) · [Star on GitHub](https://github.com/Lukecele/virtue) · [Follow Lukecele](https://github.com/Lukecele)
+[Try the chat](https://virtue-ecru.vercel.app/#booth) · [Explore the source](https://github.com/Lukecele/virtue) · [Star on GitHub](https://github.com/Lukecele/virtue) · [Follow Lukecele](https://github.com/Lukecele)
 
 [![CI](https://github.com/Lukecele/virtue/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Lukecele/virtue/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-![Virtue's Reflection Calculator showing holdings, daily volume and estimated rewards](docs/images/calculator.png)
+![Virtue's Forgiveness Booth responding to the message “I panic sold”](docs/images/chat.png)
 
-*Real screenshot of the public demo's calculator. Figures are illustrative projections, not observed earnings. The displayed $600 BNB price matches the configured fallback and does not verify live pricing.*
+*A real exchange in the Forgiveness Booth: “I panic sold” triggers an authored response and follow-up question. Reply wording can vary; token-related statements are scripted content, not verified claims.*
 
 ## What you can try
 
 The interface uses a crypto-themed “Forgiveness Booth” for conversation and a separate Reflection Calculator. It is built with Next.js, React, TypeScript and plain CSS.
 
-1. **Explore the rules:** open the [Forgiveness Booth](https://virtue-ecru.vercel.app/#booth) and send `/help`. It returns a predefined capabilities menu. Other matched prompts can choose randomly among authored replies; repeated inputs need not produce identical wording.
+1. **Start a conversation:** open the [Forgiveness Booth](https://virtue-ecru.vercel.app/#booth) and send `I panic sold`, as in the screenshot. The engine matches the message to an authored trading-regret response. Send `/help` to explore the predefined capabilities menu. Some replies are chosen randomly, so wording can vary.
 2. **Request a quote:** send `btc price`. The server tries Binance's BTC/USDT ticker, then CoinGecko's USD price. The response names its source when successful; if both fail, it directs you to external price pages. The value changes with the market.
 3. **Reproduce a calculation:** open the [calculator](https://virtue-ecru.vercel.app/#calculator), set holdings to **10,000,000 tokens** and daily volume to **$100,000** (the defaults). The implemented formula gives **$30/day**: `(10,000,000 / 1,000,000,000) × 100,000 × 0.03`. BNB conversion depends on the fetched price or the fallback described below. This is a hypothetical scenario, not a forecast or verified payout.
 
