@@ -12,9 +12,37 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "Virtue | Rule-based conversations & crypto calculations";
+const description =
+  "Rule-based conversational engine and crypto calculator with live market data. Built by Luca Celebrano (@Lukecele).";
+
 export const metadata: Metadata = {
-  title: "Virtue ($VIRTUE) | Forgiveness is a virtue. Keep building.",
-  description: "$VIRTUE is a community-driven meme token on BNB Chain inspired by CZ’s iconic tweet: “Forgiveness is a virtue!” Earn autonomous BNB reflection fees on taxes. Keep building.",
+  metadataBase: new URL("https://virtue-ecru.vercel.app"),
+  title,
+  description,
+  authors: [{ name: "Luca Celebrano", url: "https://github.com/Lukecele" }],
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "Virtue",
+    title,
+    description,
+    images: [{
+      url: "/social-card.png",
+      width: 1280,
+      height: 640,
+      alt: "Virtue — Rule-based conversations & crypto calculations, by Lukecele",
+    }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [{
+      url: "/social-card.png",
+      alt: "Virtue — Rule-based conversations & crypto calculations, by Lukecele",
+    }],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

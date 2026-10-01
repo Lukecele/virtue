@@ -1,128 +1,93 @@
-# Virtue: AI Agent & Real-Time Financial Calculator
+# Virtue
 
-[![CI](https://github.com/Lukecele/virtue/actions/workflows/ci.yml/badge.svg)](https://github.com/Lukecele/virtue/actions)
+**A rule-based conversational engine and crypto calculator for exploring scripted dialogue and market-data integrations.**
+
+By **Luca Celebrano · [@Lukecele](https://github.com/Lukecele)**
+
+[Try the demo](https://virtue-ecru.vercel.app) · [Explore the source](https://github.com/Lukecele/virtue) · [Star on GitHub](https://github.com/Lukecele/virtue) · [Follow Lukecele](https://github.com/Lukecele)
+
+[![CI](https://github.com/Lukecele/virtue/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Lukecele/virtue/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Next.js](https://img.shields.io/badge/Next.js-16_App_Router-black?logo=next.js&logoColor=white)](https://nextjs.org)
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
-[![Deterministic Engine](https://img.shields.io/badge/Engine-Deterministic_NLP_2.2k_LOC-8A2BE2)](#)
-[![Vercel Edge](https://img.shields.io/badge/Vercel-Edge_Runtime-black?logo=vercel&logoColor=white)](https://virtue-ecru.vercel.app)
 
-An interactive, pattern-matching AI conversational agent and real-time cryptocurrency financial calculator. Built with Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS, and live Binance market data.
+![Virtue's Reflection Calculator showing holdings, daily volume and estimated rewards](docs/images/calculator.png)
 
-**Live Application:** [https://virtue-ecru.vercel.app](https://virtue-ecru.vercel.app)  
-**License:** MIT
+*Real screenshot of the public demo's calculator. Figures are illustrative projections, not observed earnings. The displayed $600 BNB price matches the configured fallback and does not verify live pricing.*
 
----
+## What you can try
 
-## Overview
+The interface uses a crypto-themed “Forgiveness Booth” for conversation and a separate Reflection Calculator. It is built with Next.js, React, TypeScript and plain CSS.
 
-Virtue is a dual-function conversational web application designed for interactive natural language dialogue and live cryptographic asset valuation.
+1. **Explore the rules:** open the [Forgiveness Booth](https://virtue-ecru.vercel.app/#booth) and send `/help`. It returns a predefined capabilities menu. Other matched prompts can choose randomly among authored replies; repeated inputs need not produce identical wording.
+2. **Request a quote:** send `btc price`. The server tries Binance's BTC/USDT ticker, then CoinGecko's USD price. The response names its source when successful; if both fail, it directs you to external price pages. The value changes with the market.
+3. **Reproduce a calculation:** open the [calculator](https://virtue-ecru.vercel.app/#calculator), set holdings to **10,000,000 tokens** and daily volume to **$100,000** (the defaults). The implemented formula gives **$30/day**: `(10,000,000 / 1,000,000,000) × 100,000 × 0.03`. BNB conversion depends on the fetched price or the fallback described below. This is a hypothetical scenario, not a forecast or verified payout.
 
-Unlike standard thin wrappers around paid LLM APIs, Virtue features an **in-house, deterministic Natural Language Processing (NLP) engine** (`app/api/absolution/route.ts`) spanning over **2,200 lines of custom TypeScript logic**. 
+## Quick start
 
-### Why Custom Deterministic NLP?
-- **Zero Ongoing Token Costs:** 100% self-hosted conversational logic with zero external API bills.
-- **Ultra-Low Latency (<15ms):** Runs instantly at the edge without third-party API network overhead or queuing.
-- **Zero Mathematical Hallucinations:** Guarantees absolute accuracy on mathematical calculations, contract logic, and reflection fee distribution rules.
-- **Complete Privacy & Resilience:** Operates without rate limits, cold starts, or third-party platform dependencies.
+Use **Node.js 22.18+ or 24+** and npm. CI uses Node 22; the test script imports TypeScript directly through Node's built-in type stripping.
 
----
-
-## 🧠 Core NLP Pipeline Architecture (`app/api/absolution/route.ts`)
-
-The conversational intelligence operates as a 7-stage deterministic waterfall:
-
-```mermaid
-flowchart TD
-    A["User Confession / Input"] --> B{"External Oracles<br>Triggered?"}
-    B -->|"X / Web URL"| C["Fetch Live Tweet / Page Details"]
-    B -->|"Price Query<br>(BTC, ETH, BNB, etc.)"| D["Binance REST API<br>(Live Tickers)"]
-    B -->|"Conversational Text"| E{"Multilingual Gate<br>(11 Languages)"}
-    
-    E -->|"Non-English Detected"| F["Localized Native Prompt<br>(Request English Translation)"]
-    E -->|"English Input"| G{"Safety and Profanity<br>Guardrails"}
-    
-    G -->|"Profanity Match"| H["Respectful Sanctuary Redirect"]
-    G -->|"Passed"| I["Enhanced Pronoun Reflection<br>(reflect() Bi-directional Mapping)"]
-    
-    I --> J{"Phase 1:<br>High-Priority Intent Waterfall<br>(500+ Regex Matchers)"}
-    J -->|"Pattern Match"| K["Structured Absolution and Penance"]
-    J -->|"No Exact Match"| L{"Phase 2:<br>Fuzzy Concept and Entity Scorer<br>(Trading, Emotion, Tokenomics)"}
-    
-    L -->|"Score ≥ Threshold"| K
-    L -->|"Fallback"| M["Dynamic Contextual Recovery<br>(Crypto-hint Sensitive Fallbacks)"]
-```
-
----
-
-## Key Features
-
-- **Custom Multi-Tier NLP Engine (`app/api/absolution/route.ts`):**
-  - **High-Priority Intent Waterfall:** Matches hundreds of domain-specific patterns covering trading psychology, leverage liquidations, impermanent loss, dev history, and smart contract safety.
-  - **Contextual Memory & Pronoun Reflection:** Implements a recursive grammatical reflection algorithm (`reflect(text)`) transforming first-person user confessions into second-person counselor responses.
-  - **Multi-Domain Fuzzy Concept Scoring:** Classifies incoming messages across multiple contextual vectors (Tokenomics, CZ Lore, Emotional Distress, Market Volatility).
-  - **Crypto-Hint Sensitive Fallbacks:** If no exact or fuzzy match triggers, a contextual selector differentiates between crypto-specific queries and philosophical conversations.
-- **Polyglot Multilingual Gate:**
-  - Regex-based Unicode & stopword classification for **11 languages** (Chinese, Japanese, Korean, Russian, Arabic, Turkish, Portuguese, German, Italian, Spanish, French).
-  - Automatically responds with a tailored localized message in the user's native alphabet politely directing them to communicate in English.
-- **Live Exchange & Web Oracles:**
-  - Automated spot ticker retrieval via **Binance REST API** (`api.binance.com`) for BTC, ETH, BNB, SOL, DOGE, XRP, ADA.
-  - On-the-fly Twitter/X status link and web URL inspection.
-- **Dynamic Penance & Valuation Engine:**
-  - Dynamic mathematical parser for calculating token amounts, fiat approximations, and portfolio loss metrics.
-  - Generates structured, actionable "Divine Penances" with pre-filled 1-click Twitter/X sharing templates.
-- **Community-Driven Model Improvement:**
-  - Dedicated `💡 Improve Model` flow allowing the community to propose new NLP patterns, intents, and conversational branches directly.
-- **Modern Responsive Architecture:**
-  - Built on Next.js 16 with React 19 server/client components.
-  - High-performance dark-theme UI styled with Tailwind CSS.
-  - Deployed globally on Vercel Edge Network.
-
----
-
-## Tech Stack
-
-- **Framework:** Next.js 16 (App Router), React 19
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **APIs:** Binance Public REST API
-- **Deployment:** Vercel
-
----
-
-## Getting Started
-
-### Prerequisites
-- Node.js 18+
-- npm, pnpm, or bun
-
-### Local Setup
 ```bash
-# Clone the repository
 git clone https://github.com/Lukecele/virtue.git
 cd virtue
-
-# Install dependencies
-npm install
-
-# Run the development server
+npm ci
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser.
+Open [localhost:3000](http://localhost:3000). No API keys or environment variables are required by the current code. External data features require network access; font loading also uses Google Fonts.
 
----
+You can call the local conversation endpoint directly:
 
-## ⚖️ Open-Source Architecture & Research Notice
+```bash
+curl http://localhost:3000/api/absolution \
+  -H 'Content-Type: application/json' \
+  -d '{"messages":[{"role":"user","content":"/help"}]}'
+```
 
-This repository represents free, open-source computational linguistic research and deterministic NLP software (MIT License) developed by independent open-source software engineers.
+The JSON response contains `reply` and `penance` strings. The browser sends conversation history with each request.
 
-- **Non-Custodial NLP Research:** This software functions strictly as a rule-based conversational interface and decentralized mathematical calculator. It does not operate a financial exchange, execute custody over digital assets, or provide investment or financial advice.
-- **MiCA Exemption (Recital 22):** Open-source analytical software, algorithmic modeling tools, and decentralized conversational engines operate outside the scope of crypto-asset service provider (CASP) regulations.
-- **Meme Culture & Entertainment:** The conversational themes are inspired by crypto culture and community lore for educational and entertainment purposes.
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm test` | Run the helper-level NLP tests in `tests/` |
+| `npm run lint` | Run ESLint |
+| `npm run build` | Create a production build |
+| `npm start` | Serve a completed production build |
 
----
+[CI](.github/workflows/ci.yml) runs the tests and production build. [Contributing](CONTRIBUTING.md) also requires linting. The test suite covers helpers in `lib/nlp-engine.ts`; it does not verify every conversational rule or the external integrations.
 
-## License
+## How it works
 
-Released under the [MIT License](./LICENSE).
+| Component | Responsibility |
+| --- | --- |
+| [`app/page.tsx`](app/page.tsx) | Chat UI, in-memory conversation state, calculator formulas and browser-side BNB price refresh |
+| [`app/api/absolution/route.ts`](app/api/absolution/route.ts) | External lookups, language heuristics, ordered regex rules, pronoun reflection, keyword scoring and fallback replies |
+| [`lib/nlp-engine.ts`](lib/nlp-engine.ts) | Separately tested language, reflection and profanity helpers; the route currently maintains its own implementation |
+| [`app/globals.css`](app/globals.css) | Responsive styling and the existing gold/purple palette |
+
+The conversation engine uses hand-authored rules and templates, with limited context from the supplied history. It does not call an LLM, train a model, or learn automatically from feedback. “Improve Model” opens a prefilled X post for suggestions.
+
+### Where external services are used
+
+- **Ordinary conversation:** handled by the application's server without an external language-model API. This does not make the whole application offline: the page separately fetches BNB prices.
+- **Chat price requests:** Binance first, CoinGecko as a fallback, for BTC, ETH, BNB, SOL, DOGE, XRP and ADA. Binance quotes are denominated in USDT; CoinGecko requests USD.
+- **Calculator conversion:** the browser requests BNB/USDT from Binance on load and every 60 seconds. It starts with a hard-coded **600** price and retains the previous value if no new price is available. There is no CoinGecko fallback or freshness indicator for this calculator.
+- **Pasted links:** the server can request Twitter/X oEmbed or fetch a page's title and description. This is metadata extraction with scripted commentary, not general web research or verification. Flap.sh links have a scripted special case.
+- **Fonts and outbound links:** Google Fonts supplies fonts; sharing and token links open third-party sites.
+
+## Limits
+
+- Rules can miss intent, language detection is heuristic, and replies can vary randomly. This is not a general-purpose assistant.
+- Token supply, fee rates, eligibility thresholds and token-related claims are embedded in the code. The calculator does not read wallet balances or verify contracts, liquidity, distributions or investment safety. Some existing UI and chat wording makes claims that these mechanisms do not substantiate.
+- Calculations use JavaScript numbers, simplified assumptions and display rounding. USD-labelled conversions use a USDT pair as a proxy; monthly and yearly estimates multiply the same daily scenario by 30 and 365. They are not guarantees of accuracy or returns.
+- External APIs can fail, time out, restrict regions or rate-limit requests. Cached/default values and generic fallback replies can conceal missing live data. No latency, uptime, privacy or cost guarantees are made.
+- Messages are sent to the server. Pasted URLs may be forwarded to external services or requested sites; the browser contacts Binance and Google Fonts. No database-backed chat persistence is implemented, but hosting/provider logging is outside this code's guarantees. Avoid entering sensitive information.
+- There is no LLM token billing in this implementation. Hosting, bandwidth and external-service terms still apply.
+
+The application is an experimental, crypto-themed software project. Its scripted content and projections should not be treated as investment guidance.
+
+## Contribute and follow
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development checks and [SECURITY.md](SECURITY.md) for private security reporting. Focused contributions to rules, clarity and test coverage are welcome.
+
+If the implementation is useful to you, [star Virtue](https://github.com/Lukecele/virtue) or [follow Luca's projects](https://github.com/Lukecele).
+
+Released under the [MIT License](LICENSE).

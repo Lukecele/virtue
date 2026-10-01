@@ -2,7 +2,7 @@
   "name": "virtue",
   "version": "1.0.0",
   "license": "MIT",
-  "author": "Lukecele",
+  "author": "Luca Celebrano (@Lukecele)",
   "repository": {
     "type": "git",
     "url": "https://github.com/Lukecele/virtue.git"
@@ -26,5 +26,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.0",
     "typescript": "^5"
-  }
+  },
+  "description": "Rule-based conversational engine and crypto calculator with live market data.",
+  "homepage": "https://virtue-ecru.vercel.app"
 }
