@@ -8,10 +8,11 @@ By **Luca Celebrano · [@Lukecele](https://github.com/Lukecele)**
 
 [![CI](https://github.com/Lukecele/virtue/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Lukecele/virtue/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![PWA Ready](https://img.shields.io/badge/PWA-Installable-F0B90B?logo=pwa&logoColor=black)](https://virtue-ecru.vercel.app)
 
 ![Virtue's Forgiveness Booth responding to the message “I panic sold”](docs/images/chat.png)
 
-*A real exchange in the Forgiveness Booth: “I panic sold” triggers an authored response and follow-up question. Reply wording can vary; token-related statements are scripted content, not verified claims.*
+*A real exchange in the Forgiveness Booth: “I panic sold” triggers an authored response and follow-up question. Reply wording can vary; token-related statements are scripted content, not verified claims. The web app is an installable Progressive Web App (PWA) with offline caching.*
 
 ## What you can try
 
