@@ -971,7 +971,7 @@ export default function Home() {
           </div>
           
           <div className="footer-copyright">
-            &copy; {new Date().getFullYear()} Virtue. Inspired by @cz_binance.
+            Open Source (MIT License) • Zero proprietary copyright reserved • Inspired by @cz_binance.
             <div className="footer-disclaimer">
               Disclaimer: $VIRTUE is a community meme token for entertainment purposes only and has no official affiliation with Changpeng Zhao (CZ) or Binance. 
               Smart contract fee reflections in BNB are distributed autonomously on-chain from trading volume. Crypto-assets involve substantial risk of loss. 
